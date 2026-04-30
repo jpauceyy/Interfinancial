@@ -1,0 +1,2129 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interfinancial</title>
+  <!-- We will use a script tag to include Tailwind if needed, but since we use Vite, it will bundle it via main.ts -->
+</head>
+
+<body
+  class="flex flex-col min-h-screen font-sans bg-slate-50 selection:bg-primary-200 selection:text-primary-950 overflow-x-clip w-full text-slate-900">
+  <div id="navbar-container">
+    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-xl border-b border-slate-200/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20"><a href="#home"
+            class="flex items-center gap-2 transition-transform hover:scale-105">
+            <div
+              class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-600 to-indigo-600 flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-house" aria-hidden="true">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path
+                  d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                </path>
+              </svg></div><span class="font-bold text-xl tracking-tight text-slate-900">Interfinancial</span>
+          </a>
+          <nav
+            class="hidden lg:flex flex-1 lg:justify-end min-[1250px]:justify-center max-w-4xl pl-6 lg:pr-0 min-[1250px]:pr-6">
+            <div
+              class="flex items-center space-x-6 bg-slate-100/50 rounded-full px-6 py-2 border border-slate-200/50 shadow-sm whitespace-nowrap">
+              <a href="#mortgage-remortgages"
+                class="text-sm font-medium transition-colors text-slate-600 hover:text-primary-600">Mortgage /
+                Remortgages</a><a href="#secured-loans"
+                class="text-sm font-medium transition-colors text-slate-600 hover:text-primary-600">Secured loans</a><a
+                href="#insurance-protection"
+                class="text-sm font-medium transition-colors text-slate-600 hover:text-primary-600">Insurance &amp;
+                Income protection</a><a href="#contact"
+                class="text-sm font-medium transition-colors text-slate-600 hover:text-primary-600">Contact</a></div>
+          </nav>
+          <div class="hidden min-[1250px]:flex items-center"><a href="#contact"
+              class="px-6 py-2.5 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-all shadow-[0_4px_14px_0_rgba(15,23,42,0.2)] hover:shadow-[0_6px_20px_rgba(15,23,42,0.23)] hover:-translate-y-0.5">Get
+              Advice</a></div><button id="mobile-menu-btn"
+            class="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-lg"><svg xmlns="http://www.w3.org/2000/svg"
+              width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true">
+              <path d="M4 5h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 19h16"></path>
+            </svg></button>
+        </div>
+      </div>
+      <div id="mobile-menu"
+        class="hidden lg:hidden bg-white border-t border-slate-100 p-4 shadow-lg absolute w-full left-0 h-[calc(100vh-5rem)] overflow-y-auto flex-col z-40">
+        <div class="flex flex-col space-y-4"><a href="#mortgage-remortgages"
+            class="mobile-link px-4 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-lg">Mortgage /
+            Remortgages</a><a href="#secured-loans"
+            class="mobile-link px-4 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-lg">Secured loans</a><a
+            href="#insurance-protection"
+            class="mobile-link px-4 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-lg">Insurance &amp; Income
+            protection</a><a href="#contact"
+            class="mobile-link px-4 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-lg">Contact</a><a
+            href="#contact" class="mobile-link px-4 py-2 bg-slate-900 text-white font-medium rounded-lg text-center">Get
+            Advice</a></div>
+      </div>
+    </header>
+  </div>
+
+  <main class="flex-grow">
+
+    <div id="page-home" class="page-container">
+      <section class="relative overflow-hidden pt-20 pb-32">
+        <div class="absolute inset-0 bg-slate-50 -z-10"></div>
+        <div
+          class="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-200/40 rounded-full blur-3xl opacity-50 -translate-y-1/4 translate-x-1/4 -z-10">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-primary-200/40 rounded-full blur-3xl opacity-50 translate-y-1/4 -translate-x-1/4 -z-10">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="max-w-2xl">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-sm font-medium mb-6 backdrop-blur-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-sparkles" aria-hidden="true">
+                  <path
+                    d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z">
+                  </path>
+                  <path d="M20 2v4"></path>
+                  <path d="M22 4h-4"></path>
+                  <circle cx="4" cy="20" r="2"></circle>
+                </svg><span>FCA Regulated Independent Brokers</span></div>
+              <h1 class="text-5xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">Interfinancial
+                Can Help With <br class="hidden md:block" /><span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">All Your
+                  Mortgage Needs</span></h1>
+              <p class="text-lg text-slate-600 mb-8 max-w-xl leading-relaxed">At Interfinancial we strive to find simple
+                solutions to complicated matters for you. Our friendly team offers independent advice to guide you to
+                the right decision across Shropshire, Cheshire and Staffordshire.</p>
+              <div class="flex flex-col sm:flex-row gap-4"><a href="#calculator"
+                  class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all shadow-[0_4px_14px_0_rgba(15,23,42,0.2)] hover:shadow-[0_6px_20px_rgba(15,23,42,0.23)] hover:-translate-y-0.5">Calculate
+                  Mortgage<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-calculator" aria-hidden="true">
+                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    <line x1="8" x2="16" y1="6" y2="6"></line>
+                    <line x1="16" x2="16" y1="14" y2="18"></line>
+                    <path d="M16 10h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M8 10h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M8 14h.01"></path>
+                    <path d="M12 18h.01"></path>
+                    <path d="M8 18h.01"></path>
+                  </svg></a><a href="#contact"
+                  class="inline-flex justify-center items-center gap-2 px-8 py-3.5 rounded-full bg-white text-slate-700 border border-slate-200 font-medium hover:bg-slate-50 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">Speak
+                  to an Adviser</a></div>
+            </div>
+            <div class="relative mt-12 lg:mt-0">
+              <div
+                class="relative w-full max-w-md mx-auto aspect-square rounded-[2rem] bg-gradient-to-br from-white/60 to-white/10 border border-white/40 shadow-2xl backdrop-blur-2xl p-8 flex flex-col justify-between overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-400/20 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-400/20 rounded-full blur-3xl"></div>
+                <div class="relative z-10 flex justify-between items-start">
+                  <div class="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-house text-primary-600" aria-hidden="true">
+                      <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                      <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                      </path>
+                    </svg></div>
+                  <div
+                    class="px-4 py-1.5 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider">
+                    Approved</div>
+                </div>
+                <div class="relative z-10 space-y-6">
+                  <div>
+                    <p class="text-slate-500 font-medium text-sm mb-1">Estimated Rate</p>
+                    <p class="text-4xl font-bold text-slate-900">4.24%</p>
+                  </div>
+                  <div class="w-full h-px bg-slate-200/50"></div>
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-slate-500 font-medium text-sm mb-1">Monthly</p>
+                      <p class="text-xl font-bold text-slate-900">£1,240</p>
+                    </div>
+                    <div>
+                      <p class="text-slate-500 font-medium text-sm mb-1">Term</p>
+                      <p class="text-xl font-bold text-slate-900">25 Years</p>
+                    </div>
+                  </div>
+                </div><svg class="absolute bottom-0 left-0 w-full h-24 opacity-40 z-0" viewBox="0 0 400 100"
+                  preserveAspectRatio="none">
+                  <path d="M0,100 L0,50 Q100,80 200,40 T400,20 L400,100 Z" fill="url(#grad2)"></path>
+                  <defs>
+                    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"></stop>
+                      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"></stop>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <div
+                class="relative lg:absolute mt-8 lg:mt-0 lg:top-1/4 right-auto lg:-right-12 w-max mx-auto lg:mx-0 animate-bounce flex items-center gap-3 bg-white/90 backdrop-blur pb-4 pt-3 px-5 rounded-2xl shadow-xl border border-slate-100 p-4 z-20">
+                <div class="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-shield-check text-green-500" aria-hidden="true">
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                    </path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg></div>
+                <div class="text-left">
+                  <p class="text-xs text-slate-500 font-medium">Product Access</p>
+                  <p class="text-sm font-bold text-slate-900">10,000+ Deals</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">Why Choose Us?</h2>
+            <p class="text-slate-600">We pride ourselves on offering independent, unbiased advice that puts your needs
+              first.</p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="">
+              <div
+                class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 relative overflow-hidden h-full">
+                <div
+                  class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search text-indigo-600" aria-hidden="true">
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                  </svg></div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 relative z-10">Expert Knowledge</h3>
+                <p class="text-slate-600 text-sm leading-relaxed relative z-10">Exclusive broker access to 10,000+
+                  mortgage products and the best rates through advanced technology.</p>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 relative overflow-hidden h-full">
+                <div
+                  class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-users text-indigo-600" aria-hidden="true">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                  </svg></div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 relative z-10">Comprehensive Assistance</h3>
+                <p class="text-slate-600 text-sm leading-relaxed relative z-10">Help with all types: first time buyers,
+                  home movers, re-mortgages, adverse credit, and equity release.</p>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 relative overflow-hidden h-full">
+                <div
+                  class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-clock text-indigo-600" aria-hidden="true">
+                    <path d="M12 6v6l4 2"></path>
+                    <circle cx="12" cy="12" r="10"></circle>
+                  </svg></div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 relative z-10">Dedicated Advice</h3>
+                <p class="text-slate-600 text-sm leading-relaxed relative z-10">Independent advisers not tied to any
+                  lender, finding the right insurance and mortgage for you.</p>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-2xl bg-slate-50 hover:bg-white border border-slate-100 hover:border-indigo-100 hover:shadow-xl hover:shadow-indigo-500/5 transition-all duration-300 relative overflow-hidden h-full">
+                <div
+                  class="w-12 h-12 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-indigo-50 group-hover:border-indigo-100 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-shield-check text-indigo-600" aria-hidden="true">
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                    </path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg></div>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3 relative z-10">Speak To Our Team</h3>
+                <p class="text-slate-600 text-sm leading-relaxed relative z-10">Totally independent advice covering
+                  Market Drayton, Telford, Shrewsbury, Stafford, Nantwich and Chester.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="py-24 bg-slate-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div class="max-w-2xl">
+              <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-4">Our Services</h2>
+              <p class="text-slate-600 text-lg">Whatever your property goals, we provide the expertise to help you
+                achieve them.</p>
+            </div>
+            <div class=""><a href="#contact"
+                class="inline-flex items-center text-primary-600 font-semibold hover:text-primary-700">View all services
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-chevron-right ml-1" aria-hidden="true">
+                  <path d="m9 18 6-6-6-6"></path>
+                </svg></a></div>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="">
+              <div
+                class="group p-8 rounded-3xl bg-white border border-slate-200/60 hover:border-black/5 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-700 mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-house" aria-hidden="true">
+                      <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                      <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-3">First Time Buyers</h3>
+                  <p class="text-slate-600 mb-8">Step onto the property ladder with tailored guidance from our
+                    experienced brokers.</p>
+                </div>
+                <div class="flex items-center text-sm font-semibold text-slate-900"><span
+                    class="relative overflow-hidden"><span
+                      class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Learn
+                      more</span><span
+                      class="absolute left-0 top-0 inline-block translate-y-full text-primary-600 transition-transform duration-300 group-hover:translate-y-0">Learn
+                      more</span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-right ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-600"
+                    aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-3xl bg-white border border-slate-200/60 hover:border-black/5 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-700 mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-repeat" aria-hidden="true">
+                      <path d="m17 2 4 4-4 4"></path>
+                      <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+                      <path d="m7 22-4-4 4-4"></path>
+                      <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+                    </svg></div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-3">Remortgages</h3>
+                  <p class="text-slate-600 mb-8">Secure a better rate or release equity by giving us exclusive access to
+                    the best deals.</p>
+                </div>
+                <div class="flex items-center text-sm font-semibold text-slate-900"><span
+                    class="relative overflow-hidden"><span
+                      class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Learn
+                      more</span><span
+                      class="absolute left-0 top-0 inline-block translate-y-full text-primary-600 transition-transform duration-300 group-hover:translate-y-0">Learn
+                      more</span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-right ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-600"
+                    aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-3xl bg-white border border-slate-200/60 hover:border-black/5 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-700 mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-building2 lucide-building-2" aria-hidden="true">
+                      <path d="M10 12h4"></path>
+                      <path d="M10 8h4"></path>
+                      <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                      <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                      <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                    </svg></div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-3">Secured Loans</h3>
+                  <p class="text-slate-600 mb-8">Find simple solutions for complicated financial matters with our
+                    secured loan offerings.</p>
+                </div>
+                <div class="flex items-center text-sm font-semibold text-slate-900"><span
+                    class="relative overflow-hidden"><span
+                      class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Learn
+                      more</span><span
+                      class="absolute left-0 top-0 inline-block translate-y-full text-primary-600 transition-transform duration-300 group-hover:translate-y-0">Learn
+                      more</span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-right ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-600"
+                    aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-3xl bg-white border border-slate-200/60 hover:border-black/5 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-700 mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-truck" aria-hidden="true">
+                      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                      <path d="M15 18H9"></path>
+                      <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
+                      <circle cx="17" cy="18" r="2"></circle>
+                      <circle cx="7" cy="18" r="2"></circle>
+                    </svg></div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-3">Adverse Credit</h3>
+                  <p class="text-slate-600 mb-8">Not everyone has perfect credit. We help find solutions for a variety
+                    of circumstances.</p>
+                </div>
+                <div class="flex items-center text-sm font-semibold text-slate-900"><span
+                    class="relative overflow-hidden"><span
+                      class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Learn
+                      more</span><span
+                      class="absolute left-0 top-0 inline-block translate-y-full text-primary-600 transition-transform duration-300 group-hover:translate-y-0">Learn
+                      more</span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-right ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-600"
+                    aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></div>
+              </div>
+            </div>
+            <div class="">
+              <div
+                class="group p-8 rounded-3xl bg-white border border-slate-200/60 hover:border-black/5 hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 flex flex-col justify-between h-full">
+                <div>
+                  <div
+                    class="w-14 h-14 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-700 mb-6 group-hover:bg-slate-900 group-hover:text-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-umbrella" aria-hidden="true">
+                      <path d="M12 13v7a2 2 0 0 0 4 0"></path>
+                      <path d="M12 2v2"></path>
+                      <path d="M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z"></path>
+                    </svg></div>
+                  <h3 class="text-xl font-bold text-slate-900 mb-3">Insurance &amp; Protection</h3>
+                  <p class="text-slate-600 mb-8">Life and general insurances chosen to protect you and your home,
+                    independent of any provider.</p>
+                </div>
+                <div class="flex items-center text-sm font-semibold text-slate-900"><span
+                    class="relative overflow-hidden"><span
+                      class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Learn
+                      more</span><span
+                      class="absolute left-0 top-0 inline-block translate-y-full text-primary-600 transition-transform duration-300 group-hover:translate-y-0">Learn
+                      more</span></span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="lucide lucide-chevron-right ml-1 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-primary-600"
+                    aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="calculator" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-calculator" aria-hidden="true">
+                  <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                  <line x1="8" x2="16" y1="6" y2="6"></line>
+                  <line x1="16" x2="16" y1="14" y2="18"></line>
+                  <path d="M16 10h.01"></path>
+                  <path d="M12 10h.01"></path>
+                  <path d="M8 10h.01"></path>
+                  <path d="M12 14h.01"></path>
+                  <path d="M8 14h.01"></path>
+                  <path d="M12 18h.01"></path>
+                  <path d="M8 18h.01"></path>
+                </svg></div>
+              <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-6">Estimate your monthly
+                repayments</h2>
+              <p class="text-lg text-slate-600 mb-8 leading-relaxed">Use our quick calculator to understand what a
+                mortgage might cost you each month. This is an estimate based on a repayment mortgage.</p>
+              <ul class="space-y-4 mb-8">
+                <li class="flex items-center text-slate-700">
+                  <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Adjust inputs to
+                  see live updates
+                </li>
+                <li class="flex items-center text-slate-700">
+                  <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Helps plan your
+                  budget effectively
+                </li>
+                <li class="flex items-center text-slate-700">
+                  <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                    <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Compare different
+                  interest rates
+                </li>
+              </ul>
+            </div>
+            <div class="bg-slate-50 rounded-[2rem] p-8 border border-slate-200.50 shadow-xl shadow-slate-200/50">
+              <div class="space-y-6">
+                <div><label class="block text-sm font-semibold text-slate-700 mb-2">Property Price (£)</label>
+                  <div class="relative"><span
+                      class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                      id="calc-price" type="number"
+                      class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                      value="250000" /></div>
+                </div>
+                <div><label class="block text-sm font-semibold text-slate-700 mb-2">Deposit Amount (£)</label>
+                  <div class="relative"><span
+                      class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                      id="calc-deposit" type="number"
+                      class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                      value="25000" /></div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Interest Rate (%)</label>
+                    <div class="relative"><input id="calc-rate" type="number" step="0.1"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 pr-8 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="4.5" /><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-percent absolute right-4 top-1/2 -translate-y-1/2 text-slate-500"
+                        aria-hidden="true">
+                        <line x1="19" x2="5" y1="5" y2="19"></line>
+                        <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                        <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                      </svg></div>
+                  </div>
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Term (Years)</label><input
+                      id="calc-term" type="number"
+                      class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                      value="25" /></div>
+                </div>
+              </div>
+              <div class="mt-8 pt-8 border-t border-slate-200">
+                <div class="flex items-end justify-between mb-2"><span class="text-slate-600 font-medium">Estimated
+                    Monthly</span><span id="calc-monthly"
+                    class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">£1,251</span>
+                </div>
+                <div class="flex items-center justify-between text-sm text-slate-500"><span>Total Loan
+                    amount:</span><span class="font-medium text-slate-700"><span id="calc-loan">£225,000</span></span>
+                </div><button
+                  class="w-full mt-8 bg-slate-900 text-white font-semibold py-4 rounded-xl hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200">Get
+                  a Exact Quote</button>
+                <p class="text-xs text-slate-400 text-center mt-4">*This calculator provides an estimate only. Actual
+                  rates vary.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="process" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl opacity-50 transform translate-x-1/3 -translate-y-1/3">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl opacity-50 transform -translate-x-1/3 translate-y-1/3">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div class="text-center max-w-2xl mx-auto mb-16">
+            <h2 class="text-3xl lg:text-4xl font-bold tracking-tight mb-4">Our Simple Process</h2>
+            <p class="text-slate-400 text-lg">We take the stress out of securing a mortgage by managing the heavy
+              lifting for you.</p>
+          </div>
+          <div class="grid md:grid-cols-4 gap-8 relative">
+            <div
+              class="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent z-0">
+            </div>
+            <div class="">
+              <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left h-full">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-primary-400 font-bold font-mono text-xl mb-6 shadow-xl relative">
+                  01</div>
+                <h3 class="text-xl font-bold mb-3">Initial Consultation</h3>
+                <p class="text-slate-400 leading-relaxed">A quick chat to understand your goals, financial situation,
+                  and what you are looking for.</p>
+              </div>
+            </div>
+            <div class="">
+              <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left h-full">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-primary-400 font-bold font-mono text-xl mb-6 shadow-xl relative">
+                  02</div>
+                <h3 class="text-xl font-bold mb-3">Find Best Deal</h3>
+                <p class="text-slate-400 leading-relaxed">We scan the whole market to find the mortgage that perfectly
+                  suits your requirements.</p>
+              </div>
+            </div>
+            <div class="">
+              <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left h-full">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-primary-400 font-bold font-mono text-xl mb-6 shadow-xl relative">
+                  03</div>
+                <h3 class="text-xl font-bold mb-3">Application</h3>
+                <p class="text-slate-400 leading-relaxed">We handle all the paperwork and liaise with lenders, estate
+                  agents, and solicitors.</p>
+              </div>
+            </div>
+            <div class="">
+              <div class="relative z-10 flex flex-col items-center md:items-start text-center md:text-left h-full">
+                <div
+                  class="w-14 h-14 rounded-2xl bg-slate-800 border-2 border-slate-700 flex items-center justify-center text-primary-400 font-bold font-mono text-xl mb-6 shadow-xl relative">
+                  04</div>
+                <h3 class="text-xl font-bold mb-3">Completion</h3>
+                <p class="text-slate-400 leading-relaxed">We monitor progress up to the day you get your keys, keeping
+                  you updated constantly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="bg-slate-50 rounded-[2.5rem] p-8 md:p-16 lg:p-20 border border-slate-200/60 overflow-hidden relative">
+            <div class="absolute top-0 right-0 p-8 opacity-5"><svg xmlns="http://www.w3.org/2000/svg" width="200"
+                height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true">
+                <path
+                  d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                </path>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg></div>
+            <div class="relative z-10 max-w-3xl">
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-100 text-indigo-700 text-sm font-medium mb-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="lucide lucide-shield-check" aria-hidden="true">
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                  </path>
+                  <path d="m9 12 2 2 4-4"></path>
+                </svg>About Us</div>
+              <h2 class="text-3xl lg:text-5xl font-bold text-slate-900 tracking-tight mb-8">Expert Advice Built on <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600">Trust &amp;
+                  Transparency</span></h2>
+              <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                <p>At Interfinancial we strive to find simple solutions to complicated matters for you, such as
+                  mortgages and insurance. Our friendly and approachable team are experienced in offering independent
+                  mortgage advice that will help guide you towards making the right decision.</p>
+                <p>We are proud to not be tied to any high street bank or building society. This allows us to always
+                  offer you totally independent advice when you speak to us. If you are in Market Drayton, Telford,
+                  Shrewsbury, Stafford, Stoke-on-Trent, Nantwich or Chester, you won&#x27;t find better expertise
+                  anywhere else.</p>
+              </div>
+              <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-200 pt-12">
+                <div class="">
+                  <p class="text-3xl font-bold text-slate-900">10k+</p>
+                  <p class="text-sm text-slate-500 mt-1">Products Searched</p>
+                </div>
+                <div class="">
+                  <p class="text-3xl font-bold text-slate-900">100%</p>
+                  <p class="text-sm text-slate-500 mt-1">Independent Advice</p>
+                </div>
+                <div class="">
+                  <p class="text-3xl font-bold text-slate-900">7+</p>
+                  <p class="text-sm text-slate-500 mt-1">Regions Covered</p>
+                </div>
+                <div class="">
+                  <p class="text-3xl font-bold text-slate-900">FCA</p>
+                  <p class="text-sm text-slate-500 mt-1">Regulated Broker</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            class="relative rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 md:p-16 text-center shadow-2xl overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+              <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-[80px]"></div>
+              <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+            </div>
+            <div class="relative z-10 max-w-2xl mx-auto">
+              <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Secure Your Mortgage?</h2>
+              <p class="text-slate-300 text-lg mb-10">Book a free, no-obligation consultation with one of our expert
+                brokers today and take the first step towards your property goals.</p>
+              <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                  class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">Book
+                  Free Consultation</button><button
+                  class="px-8 py-4 rounded-full bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-phone-call" aria-hidden="true">
+                    <path d="M13 2a9 9 0 0 1 9 9"></path>
+                    <path d="M13 6a5 5 0 0 1 5 5"></path>
+                    <path
+                      d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                    </path>
+                  </svg>0800 123 4567</button></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="page-mortgage-remortgages" class="page-container" style="display: none;">
+      <div class="pt-0">
+        <section class="bg-slate-900 pt-32 pb-20 text-center px-4">
+          <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">Mortgage / Remortgages</h1>
+          <div class="w-24 h-1.5 bg-primary-500 mx-auto rounded-full"></div>
+        </section>
+        <section class="py-24 bg-white">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="prose prose-lg prose-slate max-w-none text-slate-600">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-slate-900 mb-8 text-center max-w-3xl mx-auto leading-tight">
+                We are a trusted choice to help you find the mortgage or remortgage product you require today.</h2>
+              <p class="text-center text-lg mb-16 max-w-3xl mx-auto text-slate-500">Choosing the right mortgage can be a
+                daunting process. Whether you&#x27;re a first-time buyer taking your first step onto the property
+                ladder, or you&#x27;re looking to remortgage an existing property, our expert team is here to help.</p>
+              <div class="grid md:grid-cols-2 gap-8">
+                <div
+                  class="bg-slate-50 rounded-3xl p-8 lg:p-10 border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div
+                    class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-shield-check" aria-hidden="true">
+                      <path
+                        d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                      </path>
+                      <path d="m9 12 2 2 4-4"></path>
+                    </svg></div>
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Expert Knowledge</h3>
+                  <p class="text-slate-600 leading-relaxed text-base">Exclusive broker access allows us to unlock
+                    interest rates and mortgage products that you simply won&#x27;t find on the high street. Our
+                    experienced brokers understand the nuances of the market.</p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-3xl p-8 lg:p-10 border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div
+                    class="w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center text-primary-600 mb-6 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-house" aria-hidden="true">
+                      <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                      <path
+                        d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Comprehensive Assistance</h3>
+                  <p class="text-slate-600 leading-relaxed text-base">From first-time buyers and home movers to
+                    buy-to-let investors and those with adverse credit history, we tailor our approach to your unique
+                    circumstances and financial goals.</p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-3xl p-8 lg:p-10 border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div
+                    class="w-14 h-14 bg-teal-100 rounded-2xl flex items-center justify-center text-teal-600 mb-6 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-users" aria-hidden="true">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                      <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                      <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                    </svg></div>
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Dedicated Advice</h3>
+                  <p class="text-slate-600 leading-relaxed text-base">As independent brokers, we compare the wider
+                    market to ensure you not only get a great mortgage, but the right protection and insurance policies
+                    alongside it.</p>
+                </div>
+                <div
+                  class="bg-slate-50 rounded-3xl p-8 lg:p-10 border border-slate-100 hover:shadow-lg transition-all hover:-translate-y-1">
+                  <div
+                    class="w-14 h-14 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 shadow-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone-call" aria-hidden="true">
+                      <path d="M13 2a9 9 0 0 1 9 9"></path>
+                      <path d="M13 6a5 5 0 0 1 5 5"></path>
+                      <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                      </path>
+                    </svg></div>
+                  <h3 class="text-2xl font-bold text-slate-900 mb-4">Speak to Our Team</h3>
+                  <p class="text-slate-600 leading-relaxed text-base">We are not tied to any bank or building society.
+                    We work for you. Let our friendly team lift the burden and paperwork from your shoulders so you can
+                    focus on what matters.</p>
+                </div>
+              </div>
+              <div class="mt-20 border-t border-slate-100 pt-20">
+                <div class="mb-16">
+                  <h3 class="text-3xl font-bold text-slate-900 mb-6 text-center">My Areas of Expertise</h3>
+                  <p class="text-center text-lg max-w-3xl mx-auto text-slate-500">I&#x27;ve always worked hard towards
+                    making sure my clients receive the best mortgage services for all their property financing needs.
+                    Working with Interfinancial means having my personal support for a variety of services as well as
+                    the knowledge and resources that come with years of experience in the mortgage industry.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                  <div
+                    class="bg-white rounded-3xl p-8 lg:p-10 border border-slate-200/60 shadow-sm hover:shadow-md transition-all">
+                    <div
+                      class="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-trending-up" aria-hidden="true">
+                        <path d="M16 7h6v6"></path>
+                        <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                      </svg></div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Find out more about Standard Variable Rate (SVR)
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed text-base">The SVR is the lender&#x27;s standard variable
+                      rate, usually between 2-4% above the Bank of England base rate. With a variable rate mortgage you
+                      are able to switch lenders at any time without being penalised. If you start a mortgage with a
+                      different type of interest repayment for an agreed term, once the term finishes you will go back
+                      to the lenders SVR.</p>
+                  </div>
+                  <div
+                    class="bg-slate-900 rounded-3xl p-8 lg:p-10 shadow-lg text-white transition-all transform hover:-translate-y-1">
+                    <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-white mb-6"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-lock" aria-hidden="true">
+                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg></div>
+                    <h4 class="text-xl font-bold text-white mb-4">Fixed Rate Safety</h4>
+                    <p class="text-slate-300 leading-relaxed text-base mb-6">A fixed rate mortgage allows you to repay
+                      interest at a fixed rate, irrespective of any base rate fluctuations. In other words your monthly
+                      repayments will remain the same every month for a time period agreed between you and your lender.
+                      This is usually up to 25 years.</p>
+                    <p class="text-primary-400 font-medium text-sm">Contact us today in Market Drayton, Shropshire for
+                      more help on the different types of mortgages available to you.</p>
+                  </div>
+                </div>
+                <div class="bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100 mb-16 relative overflow-hidden">
+                  <div class="absolute top-0 right-0 p-12 opacity-5 pointer-events-none"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-globe" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                      <path d="M2 12h20"></path>
+                    </svg></div>
+                  <div class="relative z-10">
+                    <div
+                      class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-100 text-primary-800 text-sm font-semibold mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-globe" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                        <path d="M2 12h20"></path>
+                      </svg> Specialist Advice</div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6">Mortgages for Buying Property Abroad
+                    </h3>
+                    <div class="space-y-4 text-slate-600">
+                      <p class="leading-relaxed">If you are considering buying a property abroad you should make sure
+                        you take specialist mortgage advice. The house buying process varies considerably from country
+                        to country, with different legal systems and local customs. For most people the best option is
+                        to arrange your overseas mortgage in the currency you earn income in. If however you are
+                        planning to receive rental income from your property in the local currency then a mortgage in
+                        the local currency may be the better option, depending on the mortgage lender&#x27;s criteria.
+                      </p>
+                      <p class="leading-relaxed">If you already have a residential property in the UK you may be able to
+                        raise money for a deposit by remortgaging and releasing equity from this property.</p>
+                      <p class="leading-relaxed">You should always seek specialist advice from independent solicitors,
+                        architects and surveyors before committing to purchasing a property overseas. They should know
+                        the country&#x27;s laws and the local house buying process.</p>
+                      <p class="leading-relaxed">You should always arrange an independent valuation of the property. The
+                        valuation will highlight any problems with the property itself but also, and very importantly,
+                        any boundary disputes.</p>
+                      <p class="leading-relaxed">You should never sign a contract that you do not understand. This
+                        includes translated contracts - always get the original contract checked by a specialist.</p>
+                      <div class="mt-8 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm inline-block">
+                        <p class="leading-relaxed font-medium text-slate-800 mb-4">If you would like to discuss your
+                          options then please contact us for a Free inital meeting in Market Drayton, Telford,
+                          Shrewsbury and the surrounding areas.</p><a href="#contact"
+                          class="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors">Book
+                          a Free Meeting <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right"
+                            aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                          </svg></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8 mb-16">
+                  <div
+                    class="bg-white rounded-3xl p-8 lg:p-10 border border-slate-200/60 shadow-sm hover:shadow-md transition-all">
+                    <div
+                      class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-house" aria-hidden="true">
+                        <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                        <path
+                          d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                        </path>
+                      </svg></div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4">Advice on Residential and Buy to Let Re-mortgages
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed text-base mb-6">If you are looking to remortgage to raise
+                      additional funds to carry out home improvements, consolidate debts, buy a second property or even
+                      re-mortgage your buy to let investment property, then we can advise you on the best route to take.
+                    </p>
+                    <p class="text-slate-900 font-medium text-sm">If you are simply looking to save money on a
+                      re-mortgage contact us today in Market Drayton, Telford, Shrewsbury, Nantwich, Crewe and Chester.
+                    </p>
+                  </div>
+                  <div
+                    class="bg-amber-50 rounded-3xl p-8 lg:p-10 border border-amber-100 shadow-sm transition-all relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-triangle-alert text-amber-500" aria-hidden="true">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg></div>
+                    <div
+                      class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center text-amber-600 mb-6 relative z-10">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-triangle-alert" aria-hidden="true">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg></div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-4 relative z-10">Taking Careful Steps</h4>
+                    <p class="text-slate-600 leading-relaxed text-base relative z-10">Always think carefully before
+                      securing or consolidating debts against your home by way of a re-mortgage. Consolidating debts by
+                      re-mortgaging may be more affordable each month in the short term but may cost you more overall in
+                      the long term as the mortgage loan repayments are spread over a longer period. We can assist you
+                      with this decision making process.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 text-center"><a href="#contact"
+                  class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all shadow-[0_4px_14px_0_rgba(15,23,42,0.2)] hover:shadow-[0_6px_20px_rgba(15,23,42,0.23)] hover:-translate-y-1">Get
+                  Started Today<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-chevron-right" aria-hidden="true">
+                    <path d="m9 18 6-6-6-6"></path>
+                  </svg></a></div>
+            </div>
+          </div>
+        </section>
+        <section id="calculator" class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-calculator" aria-hidden="true">
+                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    <line x1="8" x2="16" y1="6" y2="6"></line>
+                    <line x1="16" x2="16" y1="14" y2="18"></line>
+                    <path d="M16 10h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M8 10h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M8 14h.01"></path>
+                    <path d="M12 18h.01"></path>
+                    <path d="M8 18h.01"></path>
+                  </svg></div>
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-6">Estimate your monthly
+                  repayments</h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">Use our quick calculator to understand what a
+                  mortgage might cost you each month. This is an estimate based on a repayment mortgage.</p>
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Adjust inputs
+                    to see live updates
+                  </li>
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Helps plan your
+                    budget effectively
+                  </li>
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Compare
+                    different interest rates
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 rounded-[2rem] p-8 border border-slate-200.50 shadow-xl shadow-slate-200/50">
+                <div class="space-y-6">
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Property Price (£)</label>
+                    <div class="relative"><span
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                        id="calc-price" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="250000" /></div>
+                  </div>
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Deposit Amount (£)</label>
+                    <div class="relative"><span
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                        id="calc-deposit" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="25000" /></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Interest Rate (%)</label>
+                      <div class="relative"><input id="calc-rate" type="number" step="0.1"
+                          class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 pr-8 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                          value="4.5" /><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-percent absolute right-4 top-1/2 -translate-y-1/2 text-slate-500"
+                          aria-hidden="true">
+                          <line x1="19" x2="5" y1="5" y2="19"></line>
+                          <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                          <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                        </svg></div>
+                    </div>
+                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Term (Years)</label><input
+                        id="calc-term" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="25" /></div>
+                  </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-slate-200">
+                  <div class="flex items-end justify-between mb-2"><span class="text-slate-600 font-medium">Estimated
+                      Monthly</span><span id="calc-monthly"
+                      class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">£1,251</span>
+                  </div>
+                  <div class="flex items-center justify-between text-sm text-slate-500"><span>Total Loan
+                      amount:</span><span class="font-medium text-slate-700"><span id="calc-loan">£225,000</span></span>
+                  </div><button
+                    class="w-full mt-8 bg-slate-900 text-white font-semibold py-4 rounded-xl hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200">Get
+                    a Exact Quote</button>
+                  <p class="text-xs text-slate-400 text-center mt-4">*This calculator provides an estimate only. Actual
+                    rates vary.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact" class="py-24 bg-white">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              class="relative rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 md:p-16 text-center shadow-2xl overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-[80px]"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+              </div>
+              <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Secure Your Mortgage?</h2>
+                <p class="text-slate-300 text-lg mb-10">Book a free, no-obligation consultation with one of our expert
+                  brokers today and take the first step towards your property goals.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                    class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">Book
+                    Free Consultation</button><button
+                    class="px-8 py-4 rounded-full bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone-call" aria-hidden="true">
+                      <path d="M13 2a9 9 0 0 1 9 9"></path>
+                      <path d="M13 6a5 5 0 0 1 5 5"></path>
+                      <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                      </path>
+                    </svg>0800 123 4567</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="page-secured-loans" class="page-container" style="display: none;">
+      <div class="pt-0">
+        <section class="bg-slate-900 pt-32 pb-24 text-center px-4 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary-600/20 rounded-full blur-[100px] opacity-40 transform translate-x-1/3 -translate-y-1/3">
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] opacity-40 transform -translate-x-1/3 translate-y-1/3">
+          </div>
+          <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">Secured Loans in
+              Market Drayton, <br class="hidden md:block" /> Shrewsbury and Telford</h1>
+            <div class="w-24 h-1.5 bg-primary-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">A secured loan otherwise
+              known as a &#x27;Second Charge Loan&#x27; is a second mortgage against your residential or buy to let
+              investment property. This ranks behind your main mortgage and allows you to use some equity value you have
+              in the property as security for another loan.</p>
+          </div>
+        </section>
+        <section class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 mb-24">
+              <div>
+                <div
+                  class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 text-sm font-semibold mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-search" aria-hidden="true">
+                    <path d="m21 21-4.34-4.34"></path>
+                    <circle cx="11" cy="11" r="8"></circle>
+                  </svg> Why consider this?</div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-8 tracking-tight">Reasons for considering a Secured
+                  Loan:</h2>
+                <ul class="space-y-4">
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You wish to retain preferential terms for
+                      your existing mortgage, for example, a very low lifetime tracker interest rate.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You have an impaired credit history,
+                      failed credit score or an IVA (Debt Management Plan).</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You are an older borrower who is
+                      struggling to get credit.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You have complex financial
+                      affairs.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You are self-employed, have short term
+                      employment history or have recently changed jobs.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You need a higher loan-to-value than is
+                      otherwise available.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You have recently started trading as a
+                      limited company, partnership or sole trader.</span>
+                  </li>
+                  <li
+                    class="flex items-start bg-slate-50 p-4 rounded-2xl border border-slate-100 hover:border-indigo-100 hover:shadow-md transition-all">
+                    <div
+                      class="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center mr-4 flex-shrink-0 mt-0.5">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-circle-check-big text-primary-600" aria-hidden="true">
+                        <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                        <path d="m9 11 3 3L22 4"></path>
+                      </svg></div><span class="text-slate-700 leading-relaxed">You need a loan for reasons not usually
+                      permitted by other forms of lending.</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="lg:mt-0 mt-8">
+                <div
+                  class="bg-slate-900 rounded-[2.5rem] p-8 md:p-10 shadow-xl text-white relative overflow-hidden h-full">
+                  <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-[60px]"></div>
+                  <h3 class="text-2xl font-bold mb-6 relative z-10">Flexible uses for your loan</h3>
+                  <p class="text-slate-300 leading-relaxed mb-10 relative z-10">There is not a strict or set criteria
+                    for what a second charge loan can or cannot be used for. One of the advantages is the flexibility it
+                    offers. Examples include:</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 relative z-10">
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-trending-up" aria-hidden="true">
+                          <path d="M16 7h6v6"></path>
+                          <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                        </svg></div><span class="font-medium text-sm">Debt consolidation</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-file-text" aria-hidden="true">
+                          <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+                          <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+                          <path d="M10 9H8"></path>
+                          <path d="M16 13H8"></path>
+                          <path d="M16 17H8"></path>
+                        </svg></div><span class="font-medium text-sm">Tax bills</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-house" aria-hidden="true">
+                          <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                          <path
+                            d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                          </path>
+                        </svg></div><span class="font-medium text-sm">Home improvements</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-briefcase" aria-hidden="true">
+                          <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                          <rect width="20" height="14" x="2" y="6" rx="2"></rect>
+                        </svg></div><span class="font-medium text-sm">Business purposes</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-building2 lucide-building-2" aria-hidden="true">
+                          <path d="M10 12h4"></path>
+                          <path d="M10 8h4"></path>
+                          <path d="M14 21v-3a2 2 0 0 0-4 0v3"></path>
+                          <path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"></path>
+                          <path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"></path>
+                        </svg></div><span class="font-medium text-sm">Purchase a Buy to Let Property</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-heart-handshake" aria-hidden="true">
+                          <path
+                            d="M19.414 14.414C21 12.828 22 11.5 22 9.5a5.5 5.5 0 0 0-9.591-3.676.6.6 0 0 1-.818.001A5.5 5.5 0 0 0 2 9.5c0 2.3 1.5 4 3 5.5l5.535 5.362a2 2 0 0 0 2.879.052 2.12 2.12 0 0 0-.004-3 2.124 2.124 0 1 0 3-3 2.124 2.124 0 0 0 3.004 0 2 2 0 0 0 0-2.828l-1.881-1.882a2.41 2.41 0 0 0-3.409 0l-1.71 1.71a2 2 0 0 1-2.828 0 2 2 0 0 1 0-2.828l2.823-2.762">
+                          </path>
+                        </svg></div><span class="font-medium text-sm">Weddings</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-users" aria-hidden="true">
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                          <path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+                          <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                          <circle cx="9" cy="7" r="4"></circle>
+                        </svg></div><span class="font-medium text-sm">School fees</span>
+                    </div>
+                    <div
+                      class="flex items-center p-4 rounded-2xl bg-white/10 hover:bg-white/20 transition-colors border border-white/5 backdrop-blur-sm">
+                      <div class="text-primary-400 mr-3"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" class="lucide lucide-shield-check" aria-hidden="true">
+                          <path
+                            d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                          </path>
+                          <path d="m9 12 2 2 4-4"></path>
+                        </svg></div><span class="font-medium text-sm">Helping family financially</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+              <div
+                class="bg-gradient-to-br from-indigo-50 to-primary-50 rounded-[2.5rem] p-8 md:p-12 border border-indigo-100 shadow-sm text-center relative overflow-hidden">
+                <div class="absolute -top-12 -left-12 w-48 h-48 bg-primary-200/50 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-indigo-200/50 rounded-full blur-3xl"></div>
+                <div class="relative z-10">
+                  <h3 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">Interest rates for second charge loans
+                    typically start at around <span
+                      class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-indigo-600 text-3xl md:text-4xl">4.5%
+                      per annum</span></h3>
+                  <p class="text-slate-600 text-lg font-medium mb-10">...with minimal penalty tie-in periods.</p>
+                  <div
+                    class="bg-white/80 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-sm mb-6 text-left">
+                    <div class="flex items-start mb-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-triangle-alert text-amber-500 mr-3 flex-shrink-0 mt-1" aria-hidden="true">
+                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg>
+                      <p class="text-slate-700 italic font-medium">* Interfinancial is an INDEPENDENT Mortgage Broker
+                        authorised to advise on and arrange Secured Loan borrowing in Market Drayton, Shrewsbury and
+                        Telford. *</p>
+                    </div>
+                    <div class="w-full h-px bg-slate-200/60 my-4"></div>
+                    <div class="flex items-start"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-shield-check text-green-500 mr-3 flex-shrink-0 mt-1" aria-hidden="true">
+                        <path
+                          d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                        </path>
+                        <path d="m9 12 2 2 4-4"></path>
+                      </svg>
+                      <p class="text-slate-600">Interfinancial recommends arranging a suitable life assurance and
+                        critical illness plan to cover the additional borrowing in the event of death or an earlier
+                        serious illness. We are able to assist you with this matter, if required.</p>
+                    </div>
+                  </div><a href="#contact"
+                    class="inline-flex justify-center items-center gap-2 px-8 py-4 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all shadow-[0_4px_14px_0_rgba(15,23,42,0.2)] hover:shadow-[0_6px_20px_rgba(15,23,42,0.23)] hover:-translate-y-1 mt-4">Discuss
+                    your options<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-arrow-right" aria-hidden="true">
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="calculator" class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+              <div>
+                <div class="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-calculator" aria-hidden="true">
+                    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+                    <line x1="8" x2="16" y1="6" y2="6"></line>
+                    <line x1="16" x2="16" y1="14" y2="18"></line>
+                    <path d="M16 10h.01"></path>
+                    <path d="M12 10h.01"></path>
+                    <path d="M8 10h.01"></path>
+                    <path d="M12 14h.01"></path>
+                    <path d="M8 14h.01"></path>
+                    <path d="M12 18h.01"></path>
+                    <path d="M8 18h.01"></path>
+                  </svg></div>
+                <h2 class="text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 mb-6">Estimate your monthly
+                  repayments</h2>
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed">Use our quick calculator to understand what a
+                  mortgage might cost you each month. This is an estimate based on a repayment mortgage.</p>
+                <ul class="space-y-4 mb-8">
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Adjust inputs
+                    to see live updates
+                  </li>
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Helps plan your
+                    budget effectively
+                  </li>
+                  <li class="flex items-center text-slate-700">
+                    <div class="w-5 h-5 rounded-full bg-green-100 flex items-center justify-center mr-3 flex-shrink-0">
+                      <span class="text-green-600 text-xs text-center leading-none mt-0.5">✓</span></div>Compare
+                    different interest rates
+                  </li>
+                </ul>
+              </div>
+              <div class="bg-slate-50 rounded-[2rem] p-8 border border-slate-200.50 shadow-xl shadow-slate-200/50">
+                <div class="space-y-6">
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Property Price (£)</label>
+                    <div class="relative"><span
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                        id="calc-price" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="250000" /></div>
+                  </div>
+                  <div><label class="block text-sm font-semibold text-slate-700 mb-2">Deposit Amount (£)</label>
+                    <div class="relative"><span
+                        class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 font-medium">£</span><input
+                        id="calc-deposit" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 pl-8 pr-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="25000" /></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Interest Rate (%)</label>
+                      <div class="relative"><input id="calc-rate" type="number" step="0.1"
+                          class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 pr-8 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                          value="4.5" /><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="lucide lucide-percent absolute right-4 top-1/2 -translate-y-1/2 text-slate-500"
+                          aria-hidden="true">
+                          <line x1="19" x2="5" y1="5" y2="19"></line>
+                          <circle cx="6.5" cy="6.5" r="2.5"></circle>
+                          <circle cx="17.5" cy="17.5" r="2.5"></circle>
+                        </svg></div>
+                    </div>
+                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Term (Years)</label><input
+                        id="calc-term" type="number"
+                        class="w-full bg-white border border-slate-200 rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 outline-none transition-all"
+                        value="25" /></div>
+                  </div>
+                </div>
+                <div class="mt-8 pt-8 border-t border-slate-200">
+                  <div class="flex items-end justify-between mb-2"><span class="text-slate-600 font-medium">Estimated
+                      Monthly</span><span id="calc-monthly"
+                      class="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700">£1,251</span>
+                  </div>
+                  <div class="flex items-center justify-between text-sm text-slate-500"><span>Total Loan
+                      amount:</span><span class="font-medium text-slate-700"><span id="calc-loan">£225,000</span></span>
+                  </div><button
+                    class="w-full mt-8 bg-slate-900 text-white font-semibold py-4 rounded-xl hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200">Get
+                    a Exact Quote</button>
+                  <p class="text-xs text-slate-400 text-center mt-4">*This calculator provides an estimate only. Actual
+                    rates vary.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact" class="py-24 bg-white">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              class="relative rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 md:p-16 text-center shadow-2xl overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-[80px]"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+              </div>
+              <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Secure Your Mortgage?</h2>
+                <p class="text-slate-300 text-lg mb-10">Book a free, no-obligation consultation with one of our expert
+                  brokers today and take the first step towards your property goals.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                    class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">Book
+                    Free Consultation</button><button
+                    class="px-8 py-4 rounded-full bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone-call" aria-hidden="true">
+                      <path d="M13 2a9 9 0 0 1 9 9"></path>
+                      <path d="M13 6a5 5 0 0 1 5 5"></path>
+                      <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                      </path>
+                    </svg>0800 123 4567</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="page-insurance-protection" class="page-container" style="display: none;">
+      <div class="pt-0">
+        <section class="bg-slate-900 pt-32 pb-24 text-center px-4 relative overflow-hidden">
+          <div
+            class="absolute top-0 left-0 w-[600px] h-[600px] bg-teal-600/20 rounded-full blur-[100px] opacity-40 transform -translate-x-1/3 -translate-y-1/3">
+          </div>
+          <div
+            class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[100px] opacity-40 transform translate-x-1/3 translate-y-1/3">
+          </div>
+          <div class="relative z-10 max-w-4xl mx-auto">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-semibold mb-6 border border-white/20 backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-umbrella" aria-hidden="true">
+                <path d="M12 13v7a2 2 0 0 0 4 0"></path>
+                <path d="M12 2v2"></path>
+                <path d="M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z"></path>
+              </svg> Protection &amp; Insurance</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">Life Insurance in
+              Shrewsbury, <br class="hidden md:block" /> Telford and Throughout Shropshire</h1>
+            <div class="w-24 h-1.5 bg-teal-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">Providing financial
+              protection for your loved ones against the financial outcomes of an unexpected death, illness or injury.
+            </p>
+          </div>
+        </section>
+        <section class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <div
+                  class="w-16 h-16 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-rose-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-heart" aria-hidden="true">
+                    <path
+                      d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
+                    </path>
+                  </svg></div>
+                <h2 class="text-3xl font-bold text-slate-900 mb-6">Family Life Insurance</h2>
+                <p class="text-slate-600 leading-relaxed text-lg mb-6">Family life insurance is a way of providing
+                  financial protection for your loved ones against the financial outcomes of an unexpected death. There
+                  are various types of policies available that can be chosen for your specific needs.</p>
+                <p class="text-slate-600 leading-relaxed text-lg">The amount of cover you need should take into
+                  consideration any financial commitments there may be, such as mortgage payments, loans and other
+                  regular expenses.</p>
+              </div>
+              <div
+                class="bg-slate-50 rounded-[2.5rem] p-8 md:p-10 border border-slate-100 shadow-sm relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-48 h-48 bg-primary-100 rounded-full blur-[60px] opacity-50"></div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6 relative z-10">Understand Your Options</h3>
+                <div class="space-y-6 relative z-10">
+                  <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-repeat text-primary-600" aria-hidden="true">
+                        <path d="m17 2 4 4-4 4"></path>
+                        <path d="M3 11v-1a4 4 0 0 1 4-4h14"></path>
+                        <path d="m7 22-4-4 4-4"></path>
+                        <path d="M21 13v1a4 4 0 0 1-4 4H3"></path>
+                      </svg> Interest-only</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">Ensures the outstanding balance remains
+                      approximately the same throughout the mortgage term. This can be protected by mortgage level life
+                      assurance. This provides an amount of life cover for you that remains the same throughout the
+                      term.</p>
+                  </div>
+                  <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h4 class="font-bold text-slate-900 mb-2 flex items-center gap-2"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-trending-up text-primary-600" aria-hidden="true">
+                        <path d="M16 7h6v6"></path>
+                        <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                      </svg> Capital and Interest</h4>
+                    <p class="text-slate-600 text-sm leading-relaxed">The outstanding balance usually reduces each year.
+                      This can be protected by mortgage decreasing life assurance, which provides an amount of life
+                      cover that will decrease over the policy term.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 bg-slate-50 border-y border-slate-100">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Commercial &amp; Professional Cover</h2>
+              <p class="text-lg text-slate-600 max-w-2xl mx-auto">Comprehensive protection for your business, employees,
+                and professional services.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-left">
+              <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-store" aria-hidden="true">
+                    <path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"></path>
+                    <path
+                      d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244">
+                    </path>
+                    <path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"></path>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Commercial and Business Insurance</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">Shop, office, restaurant and pub, clubs and
+                  nightclubs, office at home, professional indemnity, product, employers and public liability,
+                  commercial legal expenses, keyman and directors, business interruption, farm and agriculture, loss of
+                  licence, stock material damage, every type of commercial and business insurance cover available.</p>
+              </div>
+              <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-scale" aria-hidden="true">
+                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="M7 21h10"></path>
+                    <path d="M12 3v18"></path>
+                    <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Professional Indemnity Insurance</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-indigo-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Protects you if a client makes a claim against you due to problems with work you have
+                      done for them</span></li>
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-indigo-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Profession-specific policies designed to cover the risks you face in your
+                      industry</span></li>
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-indigo-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Flexible policies so you can change your level of cover at any time to suit the projects
+                      you&#x27;re working on</span></li>
+                </ul>
+              </div>
+              <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center mb-6"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-hard-hat" aria-hidden="true">
+                    <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"></path>
+                    <path d="M14 6a6 6 0 0 1 6 6v3"></path>
+                    <path d="M4 15v-3a6 6 0 0 1 6-6"></path>
+                    <rect x="2" y="15" width="20" height="4" rx="1"></rect>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Public and Employers&#x27; Liability</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Covers you when you have to pay compensation for an accident and your business is at
+                      fault</span></li>
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Protection for claims made by a client, contractor, member of the public or an
+                      employee</span></li>
+                  <li class="flex items-start gap-3 text-sm text-slate-600"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-circle-check-big text-amber-500 flex-shrink-0 mt-0.5" aria-hidden="true">
+                      <path d="M21.801 10A10 10 0 1 1 17 3.335"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg><span>Protection both within and outside the workplace</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-24 bg-white relative overflow-hidden">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-teal-900 rounded-[3rem] p-8 md:p-12 lg:p-16 text-white relative overflow-hidden">
+              <div
+                class="absolute top-0 right-0 w-96 h-96 bg-teal-500/20 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3">
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500/20 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/3">
+              </div>
+              <div class="relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div>
+                  <div
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-teal-800 text-teal-100 text-sm font-semibold mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-activity" aria-hidden="true">
+                      <path
+                        d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2">
+                      </path>
+                    </svg> Health &amp; Wellbeing</div>
+                  <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Private Medical Insurance</h2>
+                  <p class="text-teal-100 text-lg leading-relaxed mb-6">Private medical insurance is normally seen as a
+                    necessity by many people to ensure they get to choose when, where and with whom they are treated,
+                    rather than accept the vagaries of NHS care.</p>
+                  <p class="text-teal-100 text-lg leading-relaxed mb-8">Many ailments can be ‘nipped in the bud’ if
+                    promptly and effectively treated rather than causing longer recovery times if ignored or when
+                    waiting times for access to consultants are taken into account.</p>
+                  <div class="bg-teal-950/50 p-6 rounded-2xl border border-teal-800/50 backdrop-blur-sm">
+                    <h4 class="text-xl font-semibold text-white mb-3 flex items-center gap-2"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-user-check text-teal-400" aria-hidden="true">
+                        <path d="m16 11 2 2 4-4"></path>
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                      </svg> Remember, we are independent...</h4>
+                    <p class="text-teal-200 text-sm leading-relaxed">And we can therefore help you find the best plan
+                      for your particular needs. Interfinancial has access to the whole market and can offer a range of
+                      highly competitive individual and family plans to suit your requirements and your budget.</p>
+                  </div>
+                </div>
+                <div class="space-y-6">
+                  <div class="bg-teal-800/40 p-8 rounded-3xl border border-teal-700/50 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4">Fast &amp; Comfortable Care</h3>
+                    <p class="text-teal-100 leading-relaxed text-sm mb-4">Good health is important to us all and when
+                      illness does strike it is often unexpected. Although the NHS offers excellent service for
+                      emergency treatment, public demand means you may experience some delay, especially for non-urgent
+                      treatment.</p>
+                    <p class="text-teal-100 leading-relaxed text-sm">With private medical insurance you will always have
+                      the comfort of knowing that, should you, or members of your family become ill, the condition can
+                      be treated quickly, by a specialist in a private hospital close to home, in comfortable
+                      surroundings.</p>
+                  </div>
+                  <div class="bg-teal-800/40 p-8 rounded-3xl border border-teal-700/50 backdrop-blur-sm">
+                    <h3 class="text-xl font-bold mb-4">Accommodation in a private hospital</h3>
+                    <p class="text-teal-100 leading-relaxed text-sm">Usually means your own room, almost always with a
+                      telephone, TV, radio and en-suite bathroom. You&#x27;ll enjoy a choice of food and drink and, as
+                      there are normally no restrictions to visitors, you can keep in contact with your friends, family
+                      and business colleagues.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-20 bg-slate-50 border-t border-slate-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-8">
+              <div
+                class="bg-white rounded-[2.5rem] p-10 md:p-12 border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                <div
+                  class="w-16 h-16 bg-primary-100 text-primary-600 rounded-2xl flex items-center justify-center mb-8">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-shield" aria-hidden="true">
+                    <path
+                      d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z">
+                    </path>
+                  </svg></div>
+                <h3 class="text-2xl font-bold text-slate-900 mb-6">Why should you choose Mortgage Payment Protection?
+                </h3>
+                <p class="text-slate-600 leading-relaxed text-lg mb-6">Mortgage payment protection covers your mortgage
+                  related payments whenever you find yourself unable to work for an extended period. This could be due
+                  to accident, sickness or simply losing your job.</p>
+                <p class="text-slate-600 leading-relaxed text-lg">Expenses covered include mortgage payments, life
+                  insurance premiums, buildings and contents insurance premiums and payments on any endowment policies
+                  you may have.</p>
+              </div>
+              <div class="bg-indigo-900 rounded-[2.5rem] p-10 md:p-12 text-white shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-[60px]"></div>
+                <div class="relative z-10">
+                  <div
+                    class="w-16 h-16 bg-white/10 text-indigo-300 rounded-2xl flex items-center justify-center mb-8 border border-white/10 backdrop-blur-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-wallet" aria-hidden="true">
+                      <path
+                        d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1">
+                      </path>
+                      <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+                    </svg></div>
+                  <h3 class="text-2xl font-bold text-white mb-6">Why should you choose an Income Protection Policy?</h3>
+                  <p class="text-indigo-100 leading-relaxed text-lg mb-8">The benefit of choosing an income protection
+                    policy as an alternative is that it doesn’t just cover your mortgage related expenses. This option
+                    will provide you with a replacement income to cover your general living expenses.</p>
+                  <div class="bg-indigo-950/50 p-6 rounded-2xl border border-indigo-800/50">
+                    <p class="text-indigo-200 font-medium">Contact Interfinancial in Shropshire for more helpful advice
+                      on your protection.</p><a href="#contact"
+                      class="mt-4 inline-flex items-center gap-2 text-white font-semibold hover:text-indigo-300 transition-colors">Get
+                      Advice <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                      </svg></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="contact" class="py-24 bg-white">
+          <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div
+              class="relative rounded-[2.5rem] bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 p-10 md:p-16 text-center shadow-2xl overflow-hidden">
+              <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500/20 rounded-full blur-[80px]"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-500/20 rounded-full blur-[80px]"></div>
+              </div>
+              <div class="relative z-10 max-w-2xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Secure Your Mortgage?</h2>
+                <p class="text-slate-300 text-lg mb-10">Book a free, no-obligation consultation with one of our expert
+                  brokers today and take the first step towards your property goals.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4"><button
+                    class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-slate-50 transition-colors shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2">Book
+                    Free Consultation</button><button
+                    class="px-8 py-4 rounded-full bg-slate-800 text-white font-medium hover:bg-slate-700 transition-colors flex items-center justify-center gap-2"><svg
+                      xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                      class="lucide lucide-phone-call" aria-hidden="true">
+                      <path d="M13 2a9 9 0 0 1 9 9"></path>
+                      <path d="M13 6a5 5 0 0 1 5 5"></path>
+                      <path
+                        d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                      </path>
+                    </svg>0800 123 4567</button></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <div id="page-contact" class="page-container" style="display: none;">
+      <link rel="preload" as="image" href="/img/paul.avif" />
+      <div class="pt-0">
+        <section class="bg-slate-900 pt-32 pb-24 text-center px-4 relative overflow-hidden">
+          <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600/20 rounded-full blur-[100px] opacity-40 transform translate-x-1/3 -translate-y-1/3">
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-indigo-600/20 rounded-full blur-[100px] opacity-40 transform -translate-x-1/3 translate-y-1/3">
+          </div>
+          <div class="relative z-10 max-w-4xl mx-auto">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 text-white text-sm font-semibold mb-6 border border-white/20 backdrop-blur-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-mail" aria-hidden="true">
+                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              </svg> Get in Touch</div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">Interfinancial<br />
+              Mortgage &amp; Insurance Brokers</h1>
+            <div class="w-24 h-1.5 bg-primary-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">Get in touch today to speak
+              to mortgage and insurance brokers that always put you first. Don&#x27;t delay in getting the best mortgage
+              advice and insurance advice for you and your family. We cover Shropshire, Staffordshire, Cheshire and the
+              rest of the UK.</p>
+          </div>
+        </section>
+        <section class="py-24 bg-white relative">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16">
+              <div class="order-2 lg:order-1">
+                <div
+                  class="bg-slate-50 rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-sm relative overflow-hidden">
+                  <div class="absolute top-0 right-0 w-64 h-64 bg-primary-100 rounded-full blur-[80px] opacity-50">
+                  </div>
+                  <h2 class="text-3xl font-bold text-slate-900 mb-2 relative z-10">Send us a message</h2>
+                  <p class="text-slate-600 mb-8 relative z-10">Fill out our contact form below and we&#x27;ll get back
+                    to you shortly.</p>
+                  <form class="space-y-6 relative z-10" action="https://formsubmit.co/info@interfinancial.co.uk"
+                    method="POST"><input type="hidden" name="_subject"
+                      value="New Contact Form Submission from Website" />
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="space-y-2"><label class="text-sm font-medium text-slate-700">First Name</label><input
+                          type="text" required=""
+                          class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                          placeholder="John" name="First Name" /></div>
+                      <div class="space-y-2"><label class="text-sm font-medium text-slate-700">Last Name</label><input
+                          type="text" required=""
+                          class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                          placeholder="Doe" name="Last Name" /></div>
+                    </div>
+                    <div class="space-y-2"><label class="text-sm font-medium text-slate-700">Email Address</label><input
+                        type="email" required=""
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                        placeholder="john@example.com" name="Email" /></div>
+                    <div class="space-y-2"><label class="text-sm font-medium text-slate-700">Phone</label><input
+                        type="tel"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all"
+                        placeholder="01234 567890" name="Phone" /></div>
+                    <div class="space-y-2"><label class="text-sm font-medium text-slate-700">Message</label><textarea
+                        name="Message" required="" rows="4"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all resize-none"
+                        placeholder="How can we help you?"></textarea></div><button type="submit"
+                      class="w-full py-4 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-sm hover:shadow-md"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-send" aria-hidden="true">
+                        <path
+                          d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z">
+                        </path>
+                        <path d="m21.854 2.147-10.94 10.939"></path>
+                      </svg> Send Message</button>
+                  </form>
+                </div>
+              </div>
+              <div class="order-1 lg:order-2">
+                <div class="space-y-10">
+                  <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-8">Get in touch</h2>
+                    <div class="space-y-6">
+                      <div class="flex items-start gap-4">
+                        <div
+                          class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-phone-call" aria-hidden="true">
+                            <path d="M13 2a9 9 0 0 1 9 9"></path>
+                            <path d="M13 6a5 5 0 0 1 5 5"></path>
+                            <path
+                              d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384">
+                            </path>
+                          </svg></div>
+                        <div>
+                          <h4 class="font-semibold text-slate-900 mb-1">Call Us Today</h4>
+                          <div class="flex flex-col gap-1"><a href="tel:01630642868"
+                              class="text-slate-600 hover:text-indigo-600 transition-colors">01630 642868</a><a
+                              href="tel:07879643246"
+                              class="text-slate-600 hover:text-indigo-600 transition-colors">07879 643246</a></div>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-4">
+                        <div
+                          class="w-12 h-12 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-mail" aria-hidden="true">
+                            <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                          </svg></div>
+                        <div>
+                          <h4 class="font-semibold text-slate-900 mb-1">Email Us</h4><a
+                            href="mailto:info@interfinancial.co.uk"
+                            class="text-slate-600 hover:text-rose-600 transition-colors">info@interfinancial.co.uk</a>
+                        </div>
+                      </div>
+                      <div class="flex items-start gap-4">
+                        <div
+                          class="w-12 h-12 rounded-xl bg-primary-50 text-primary-600 flex items-center justify-center flex-shrink-0">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-map-pin" aria-hidden="true">
+                            <path
+                              d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0">
+                            </path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                          </svg></div>
+                        <div>
+                          <h4 class="font-semibold text-slate-900 mb-1">Visit Us</h4>
+                          <p class="text-slate-600 leading-relaxed">Interfinancial, The Brookhouse,<br />Smithy Lane,
+                            Market Drayton,<br />Shropshire, TF9 4HP</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-8 bg-slate-900 rounded-3xl text-white shadow-xl relative overflow-hidden">
+                    <div class="absolute -bottom-4 -right-4 text-white/5 pointer-events-none"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-building" aria-hidden="true">
+                        <path d="M12 10h.01"></path>
+                        <path d="M12 14h.01"></path>
+                        <path d="M12 6h.01"></path>
+                        <path d="M16 10h.01"></path>
+                        <path d="M16 14h.01"></path>
+                        <path d="M16 6h.01"></path>
+                        <path d="M8 10h.01"></path>
+                        <path d="M8 14h.01"></path>
+                        <path d="M8 6h.01"></path>
+                        <path d="M9 22v-3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v3"></path>
+                        <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                      </svg></div>
+                    <div
+                      class="relative z-10 flex flex-col sm:flex-row gap-6 items-center sm:items-start text-center sm:text-left mb-6">
+                      <img src="/img/paul.avif" alt="Paul Fenwick"
+                        class="w-24 h-24 rounded-full border-4 border-slate-700 object-cover flex-shrink-0" />
+                      <div>
+                        <h3 class="text-xl font-bold mb-2">Experienced Advice</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm"><strong>Paul Fenwick</strong> - Director of
+                          Interfinancial Mortgage and General Insurance Brokers. Celebrating over 30 Years Experience
+                          and Service within the Financial Services Industry.</p>
+                      </div>
+                    </div>
+                    <div class="pt-6 border-t border-white/10 relative z-10">
+                      <p class="text-slate-400 text-xs leading-relaxed">Authorised and Regulated by the Financial
+                        Conduct Authority ref:195920</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-24 bg-slate-50 border-t border-slate-200">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Our Business Partners</h2>
+              <p class="text-lg text-slate-600 max-w-2xl mx-auto">We work with trusted professionals to provide you with
+                a comprehensive service.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+              <div
+                class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+                <div
+                  class="w-16 h-16 mx-auto bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-landmark" aria-hidden="true">
+                    <path d="M10 18v-7"></path>
+                    <path
+                      d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z">
+                    </path>
+                    <path d="M14 18v-7"></path>
+                    <path d="M18 18v-7"></path>
+                    <path d="M3 22h18"></path>
+                    <path d="M6 18v-7"></path>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Aaron James Consultancy Limited</h3>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Provides all of your accountancy needs.</p>
+                <div class="pt-6 border-t border-slate-100">
+                  <p class="text-sm font-medium text-slate-900 mb-1">Rajendra Mugunthan</p>
+                  <p class="text-sm text-indigo-600 font-medium">07976 828879</p>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+                <div
+                  class="w-16 h-16 mx-auto bg-primary-50 text-primary-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-scale" aria-hidden="true">
+                    <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"></path>
+                    <path d="M7 21h10"></path>
+                    <path d="M12 3v18"></path>
+                    <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"></path>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Ackroyd Legal</h3>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Whether you are considering to a buy a new home
+                  buy to let investment property or simply a remortgage, Ackroyd Legal caters for all your conveyancing
+                  and legal needs.</p>
+                <div class="pt-6 border-t border-slate-100">
+                  <p class="text-sm font-medium text-slate-900 mb-1">Kumaran Moorthy</p>
+                  <p class="text-sm text-primary-600 font-medium">07796 030606</p>
+                </div>
+              </div>
+              <div
+                class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-center group">
+                <div
+                  class="w-16 h-16 mx-auto bg-amber-50 text-amber-600 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-handshake" aria-hidden="true">
+                    <path d="m11 17 2 2a1 1 0 1 0 3-3"></path>
+                    <path
+                      d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4">
+                    </path>
+                    <path d="m21 3 1 11h-2"></path>
+                    <path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path>
+                    <path d="M3 4h8"></path>
+                  </svg></div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">Sterling &amp; Law</h3>
+                <p class="text-slate-600 text-sm mb-6 leading-relaxed">Established in 1997, a firm of professional
+                  independent financial consultants based in London offering advice on pensions and investments.
+                  Discounts are available to Interfinancial Clients.</p>
+                <div class="pt-6 border-t border-slate-100">
+                  <p class="text-sm font-medium text-slate-900 mb-1">Lawrence Sanderson</p>
+                  <p class="text-sm text-amber-600 font-medium">07525 435315</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        <div class="col-span-1 md:col-span-1">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="w-6 h-6 rounded bg-primary-600 flex items-center justify-center text-white"><svg
+                xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-house" aria-hidden="true">
+                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path>
+                <path
+                  d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z">
+                </path>
+              </svg></div><span class="font-bold text-lg text-slate-900">Interfinancial</span>
+          </div>
+          <p class="text-sm text-slate-500 leading-relaxed">Independent mortgage advice in Shropshire, Cheshire and
+            Staffordshire.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-slate-900 mb-4">Services</h4>
+          <ul class="space-y-3 text-sm text-slate-500">
+            <li><a href="#" class="hover:text-primary-600 transition-colors">First Time Buyers</a></li>
+            <li><a href="#" class="hover:text-primary-600 transition-colors">Remortgages</a></li>
+            <li><a href="#" class="hover:text-primary-600 transition-colors">Buy to Let</a></li>
+            <li><a href="#" class="hover:text-primary-600 transition-colors">Protection Advice</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-slate-900 mb-4">Company</h4>
+          <ul class="space-y-3 text-sm text-slate-500">
+            <li><a href="#about" class="hover:text-primary-600 transition-colors">About Us</a></li>
+            <li><a href="#contact" class="hover:text-primary-600 transition-colors">Contact</a></li>
+            <li><a href="#" class="hover:text-primary-600 transition-colors">Careers</a></li>
+            <li><a href="#" class="hover:text-primary-600 transition-colors">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold text-slate-900 mb-4">Contact</h4>
+          <ul class="space-y-3 text-sm text-slate-500">
+            <li>The Brookhouse, Smithy Lane, Market Drayton</li>
+            <li>Shropshire, TF9 4HP</li>
+            <li>Authorised &amp; Regulated by the FCA: 195920</li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="border-t border-slate-200 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-slate-500 font-medium max-w-3xl"><strong>Important:</strong> As a mortgage is secured
+          against your home, it may be repossessed if you do not keep up repayments on your mortgage. Some types of buy
+          to let mortgages are not regulated by the Financial Conduct Authority.</p>
+        <p class="text-sm text-slate-400 shrink-0">© 2026 Interfinancial. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
+</html>
