@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-@import "tailwindcss";
+@import 'tailwindcss';
 
+/* Interfinancial — Tailwind theme. Blue ramp is the site's original palette. */
 @theme {
   --color-primary-50: #eff6ff;
   --color-primary-100: #dbeafe;
@@ -13,20 +13,146 @@
   --color-primary-800: #1e40af;
   --color-primary-900: #1e3a8a;
   --color-primary-950: #172554;
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-night: #0a1230;
+  --color-paper: #f5f8ff;
+
+  --font-display: 'Archivo Variable', 'Arial Black', system-ui, sans-serif;
+  --font-sans: 'DM Sans Variable', system-ui, sans-serif;
+
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
-html, body {
-  overflow-x: hidden;
+@layer base {
+  html { scroll-padding-top: 6rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-night font-sans text-[1.0625rem] leading-relaxed text-primary-950 antialiased; overflow-x: clip; text-wrap: pretty; }
+  h1, h2, h3 { @apply font-display; text-wrap: balance; }
+  ::selection { @apply bg-primary-200 text-primary-950; }
+  :focus-visible { outline: 2px solid var(--color-primary-400); outline-offset: 3px; border-radius: 8px; }
+  img { @apply block max-w-full; }
 }
 
-html {
-  scroll-behavior: smooth;
+/* expanded grotesk display type, as in the reference */
+@utility display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #f8fafc;
-  color: #0f172a;
+@layer components {
+  /* full-width colour sections; the fixed bezel frames them. Later sections
+     get rounded tops and overlap the previous one for the stacking effect. */
+  .panel { @apply relative overflow-clip; }
+  [data-slot] > .panel, .page > .panel:not(:first-child), #cta-band { @apply -mt-10 rounded-t-[2.5rem]; }
+  .panel-pad { @apply px-6 py-16 md:px-14 md:py-24 lg:px-20 lg:py-28; }
+  .wrap { @apply mx-auto w-full max-w-[1280px]; }
+
+  .h-xl { @apply display text-[clamp(1.7rem,min(5.3vw,9svh),5.25rem)] font-extrabold; }
+  .h-lg { @apply display text-[clamp(1.7rem,4vw,3.75rem)] font-extrabold; }
+  .h-md { @apply display text-[clamp(1.4rem,2.6vw,2.25rem)] font-extrabold; }
+  .thin { @apply font-light; }
+  .eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-current/25 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em]; }
+
+  /* pill button with circular arrow */
+  .btn { @apply inline-flex min-h-13 items-center gap-4 rounded-full bg-night py-1.5 pr-1.5 pl-6 text-[0.9375rem] font-semibold text-white transition-transform duration-150 active:scale-[0.97]; }
+  .btn-dot { @apply grid size-10 place-items-center rounded-full bg-primary-500 text-white transition-transform duration-300; transition-timing-function: var(--ease-out-strong); }
+  .btn-light { @apply bg-white text-night; }
+  .btn-light .btn-dot { @apply bg-night; }
+  .btn-ghost { @apply border border-white/40 bg-white/10 text-white; }
+  @media (hover: hover) and (pointer: fine) {
+    .btn:hover .btn-dot { transform: rotate(-45deg); }
+  }
+
+  .glass { @apply rounded-3xl border border-white/20 bg-white/15 backdrop-blur-md; }
+  .icon { @apply size-[1.15em] shrink-0 fill-none stroke-current; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .checks li { @apply flex items-start gap-3; }
+  .checks .icon { @apply mt-1.5 text-primary-600; }
+  .field label { @apply mb-1.5 block text-sm font-semibold; }
+  .field input, .field textarea { @apply w-full rounded-2xl border border-primary-200 bg-white px-4 py-3.5 text-base text-primary-950 transition-colors; }
+  .field input:focus, .field textarea:focus { @apply border-primary-600 outline-none; }
+}
+
+/* pages: hidden pages vanish; the visible one doesn't create a box, so its
+   sections, the CTA band and footer are siblings for sticky stacking */
+.page[hidden] { display: none; }
+.page:not([hidden]), [data-slot] { display: contents; }
+
+/* notch cut out of a photo's corner (reference detail) */
+.notch { -webkit-mask: radial-gradient(circle 44px at calc(100% - 2px) calc(100% - 2px), #0000 97%, #000); mask: radial-gradient(circle 44px at calc(100% - 2px) calc(100% - 2px), #0000 97%, #000); }
+
+/* fixed bezel: the blurred photo surround with a rounded window cut out */
+#bezel { position: fixed; inset: 0; z-index: 60; width: 100%; height: 100%; pointer-events: none; }
+.shade { position: absolute; inset: 0; z-index: 5; background: var(--color-night); opacity: 0; pointer-events: none; }
+
+/* hero typewriter caret */
+.caret { display: inline-block; width: 0.08em; height: 0.8em; margin-left: 0.06em; background: currentColor; vertical-align: -0.04em; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* pinned horizontal card track (md+) */
+@media (min-width: 768px) {
+  [data-hscroll] .hs-pin { position: sticky; top: 0; height: 100svh; display: flex; align-items: center; overflow: hidden; }
+  [data-hscroll] .hs-track { will-change: transform; }
+}
+
+/* ---------- splash (CSS-only, ~1.9s) ---------- */
+#splash { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; pointer-events: none; }
+#splash .half { position: absolute; left: 0; right: 0; height: 50.5%; background: var(--color-night); will-change: transform; }
+#splash .top { top: 0; animation: split-up 0.7s var(--ease-in-out-strong) 1.25s forwards; }
+#splash .bottom { bottom: 0; animation: split-down 0.7s var(--ease-in-out-strong) 1.25s forwards; }
+#splash .mark { position: relative; z-index: 1; display: grid; justify-items: center; gap: 1.1rem; animation: mark-out 0.25s ease 1.15s forwards; }
+#splash .crest { position: relative; width: 6rem; height: 6rem; display: grid; place-items: center; }
+#splash .crest img { width: 4.6rem; height: auto; border-radius: 1rem; background: #fff; padding: 0.35rem; opacity: 0; transform: scale(0.8); animation: crest-in 0.55s var(--ease-out-strong) 0.1s forwards; }
+#splash .crest svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); }
+#splash .crest circle { fill: none; stroke: var(--color-primary-400); stroke-width: 2; stroke-linecap: round; stroke-dasharray: 289; stroke-dashoffset: 289; animation: ring 0.9s var(--ease-in-out-strong) 0.15s forwards; }
+#splash .word { font-family: var(--font-display); font-stretch: 125%; font-weight: 700; text-transform: uppercase; font-size: clamp(1.5rem, 5vw, 2.5rem); letter-spacing: -0.02em; color: #fff; clip-path: inset(0 100% 0 0); animation: wipe 0.65s var(--ease-in-out-strong) 0.45s forwards; }
+#splash .tag { font-size: 0.7rem; letter-spacing: 0.34em; text-transform: uppercase; color: var(--color-primary-300); opacity: 0; transform: translateY(6px); animation: rise 0.45s var(--ease-out-strong) 0.85s forwards; }
+@keyframes crest-in { to { opacity: 1; transform: none; } }
+@keyframes ring { to { stroke-dashoffset: 0; } }
+@keyframes wipe { to { clip-path: inset(0); } }
+@keyframes rise { to { opacity: 1; transform: none; } }
+@keyframes mark-out { to { opacity: 0; transform: scale(0.96); } }
+@keyframes split-up { to { transform: translateY(-101%); } }
+@keyframes split-down { to { transform: translateY(101%); } }
+@keyframes fade-in { to { opacity: 1; } }
+@keyframes fade-out { to { opacity: 0; } }
+
+/* ---------- entrance + reveals ---------- */
+.line { display: block; overflow: clip; padding-bottom: 0.08em; }
+.line > span { display: inline-block; }
+.js .hero-in { opacity: 0; transform: translateY(18px); }
+.js .line > span { transform: translateY(110%); }
+.loaded .hero-in { opacity: 1; transform: none; transition: opacity 0.6s var(--ease-out-strong), transform 0.6s var(--ease-out-strong); transition-delay: calc(var(--i, 0) * 70ms + 100ms); }
+.loaded .line > span { transform: none; transition: transform 0.8s var(--ease-out-strong); transition-delay: calc(var(--i, 0) * 90ms + 80ms); }
+
+/* items rise in, staggered by --d */
+.js .rv { opacity: 0; transform: translateY(28px); transition: opacity 0.7s var(--ease-out-strong), transform 0.7s var(--ease-out-strong); transition-delay: calc(var(--d, 0) * 90ms); }
+.js .rv.in { opacity: 1; transform: none; }
+
+/* headings: each word slides up out of a mask */
+.w { display: inline-block; overflow: clip; vertical-align: top; padding-bottom: 0.1em; margin-bottom: -0.1em; }
+.w > span { display: inline-block; }
+.js .split .w > span { transform: translateY(105%); transition: transform 0.75s var(--ease-out-strong); transition-delay: calc(var(--wi, 0) * 45ms); }
+.js .split.in .w > span { transform: none; }
+
+/* images wipe up from the bottom and settle from a slight zoom */
+.js .img-rv { clip-path: inset(100% 0 0 0 round 2rem); transition: clip-path 1s var(--ease-in-out-strong); }
+.js .img-rv img { transform: scale(1.18); transition: transform 1.4s var(--ease-out-strong); }
+.js .img-rv.in { clip-path: inset(0 0 0 0 round 2rem); }
+.js .img-rv.in img { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  /* splash stays, but fade-only: no wipe, ring draw, scale or slide */
+  #splash .top, #splash .bottom { animation: fade-out 0.5s ease 1.2s forwards; }
+  #splash .mark { animation: fade-out 0.3s ease 1.1s forwards; }
+  #splash .crest img { transform: none; animation: fade-in 0.4s ease 0.1s forwards; }
+  #splash .crest circle { animation: none; stroke-dashoffset: 0; }
+  #splash .word { clip-path: none; opacity: 0; animation: fade-in 0.4s ease 0.3s forwards; }
+  #splash .tag { transform: none; animation: fade-in 0.4s ease 0.55s forwards; }
+  .caret { animation: none; }
+  .js .hero-in, .js .line > span, .js .rv, .js .split .w > span { transform: none; opacity: 1; transition: opacity 0.3s ease; }
+  .js .img-rv, .js .img-rv.in { clip-path: none; }
+  .js .img-rv img { transform: none; }
 }
