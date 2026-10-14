@@ -4,18 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interfinancial | Independent Mortgage &amp; Insurance Brokers, Market Drayton</title>
+  <title>Interfinancial</title>
   <meta name="description"
     content="FCA regulated independent mortgage and insurance brokers in Market Drayton, covering Shropshire, Cheshire and Staffordshire." />
-  <meta name="theme-color" content="#f3f7ff" />
+  <meta name="theme-color" content="#0a1230" />
   <link rel="icon" type="image/png" href="img/favicon.png" />
-  <link rel="preload" as="image" href="/img/hero-keys.avif" type="image/avif" />
+  <link rel="preload" as="image" href="/img/hero-couple.avif" type="image/avif" />
   <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
+  <div class="backdrop" aria-hidden="true"></div>
+
   <!-- icon sprite -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <svg width="0" height="0" class="absolute" aria-hidden="true">
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" /></symbol>
     <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 8h16M4 16h16" /></symbol>
@@ -24,130 +26,218 @@
     <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z" /><circle cx="12" cy="9.5" r="2.5" /></symbol>
     <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 5 6v6c0 4.5 3 7.5 7 9 4-1.5 7-4.5 7-9V6z" /><path d="m9 12 2 2 4-4" /></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7" /><path d="M5 10v10h14V10" /><path d="M10 20v-6h4v6" /></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4" /><path d="M3 11v-1a4 4 0 0 1 4-4h14" /><path d="m7 22-4-4 4-4" /><path d="M21 13v1a4 4 0 0 1-4 4H3" /></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2" /><path d="M8 11V8a4 4 0 0 1 8 0v3" /></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 10h18M7 15h4" /></symbol>
   </svg>
 
-  <a href="#main" class="sr">Skip to content</a>
+  <!-- splash -->
+  <div id="splash" aria-hidden="true">
+    <div class="half top"></div>
+    <div class="half bottom"></div>
+    <div class="mark">
+      <div class="crest">
+        <svg viewBox="0 0 96 96"><circle cx="48" cy="48" r="46" /></svg>
+        <img src="img/crest.avif" width="128" height="128" alt="" />
+      </div>
+      <div class="word">Interfinancial</div>
+      <div class="tag">Independent Mortgage Brokers</div>
+    </div>
+  </div>
 
-  <header class="site-header" id="site-header">
-    <div class="wrap">
-      <a href="#home" class="brand" aria-label="Interfinancial home"><img src="img/crest.avif" width="128" height="128" alt="" /><span><b>Interfinancial</b><small>Mortgage Solutions</small></span></a>
-      <nav class="nav" aria-label="Main">
-        <a href="#mortgage-remortgages">Mortgage / Remortgages</a>
-        <a href="#secured-loans">Secured loans</a>
-        <a href="#insurance-protection">Insurance &amp; Income protection</a>
-        <a href="#contact">Contact</a>
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
+
+  <!-- floating nav -->
+  <header id="nav" class="fixed inset-x-5 top-5 z-50 mx-auto max-w-[1280px] rounded-full bg-white/90 backdrop-blur-md transition-shadow duration-300 md:inset-x-9">
+    <div class="flex items-center justify-between gap-4 py-2 pr-2 pl-5">
+      <a href="#home" class="flex items-center gap-2.5" aria-label="Interfinancial home">
+        <img src="img/crest.avif" width="40" height="40" alt="" class="size-10" />
+        <span class="font-display text-xl leading-none font-semibold tracking-tight text-primary-950">Interfinancial</span>
+      </a>
+      <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
+        <a data-nav href="#mortgage-remortgages" class="rounded-full px-4 py-2 text-sm font-semibold text-primary-950 transition-colors duration-200 hover:bg-primary-100">Mortgage / Remortgages</a>
+        <a data-nav href="#secured-loans" class="rounded-full px-4 py-2 text-sm font-semibold text-primary-950 transition-colors duration-200 hover:bg-primary-100">Secured loans</a>
+        <a data-nav href="#insurance-protection" class="rounded-full px-4 py-2 text-sm font-semibold text-primary-950 transition-colors duration-200 hover:bg-primary-100">Insurance &amp; Income protection</a>
+        <a data-nav href="#contact" class="rounded-full px-4 py-2 text-sm font-semibold text-primary-950 transition-colors duration-200 hover:bg-primary-100">Contact</a>
       </nav>
-      <a href="#contact" class="btn btn--sm header-cta">Get Advice</a>
-      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <a href="#contact" class="btn hidden !min-h-11 !pl-5 lg:inline-flex"><span>Get Advice</span><span class="btn-dot !size-8"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+      <button id="menu-btn" class="grid size-11 place-items-center rounded-full bg-night text-white transition-transform duration-150 active:scale-95 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
         <svg class="icon"><use href="#i-menu" /></svg>
       </button>
     </div>
   </header>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#mortgage-remortgages">Mortgage / Remortgages</a>
-    <a href="#secured-loans">Secured loans</a>
-    <a href="#insurance-protection">Insurance &amp; Income protection</a>
-    <a href="#contact">Contact</a>
-    <a href="#contact" class="btn">Get Advice</a>
+  <div id="mobile-menu" class="invisible fixed inset-x-3 top-[5.25rem] z-40 -translate-y-2 rounded-[1.75rem] bg-white p-5 opacity-0 transition-[opacity,transform,visibility] duration-200 lg:hidden">
+    <div class="grid gap-1 font-display text-2xl font-semibold uppercase">
+      <a href="#mortgage-remortgages" class="rounded-2xl px-3 py-3 hover:bg-primary-50">Mortgage / Remortgages</a>
+      <a href="#secured-loans" class="rounded-2xl px-3 py-3 hover:bg-primary-50">Secured loans</a>
+      <a href="#insurance-protection" class="rounded-2xl px-3 py-3 hover:bg-primary-50">Insurance &amp; Income protection</a>
+      <a href="#contact" class="rounded-2xl px-3 py-3 hover:bg-primary-50">Contact</a>
+    </div>
+    <a href="#contact" class="btn mt-4 w-full justify-between"><span>Get Advice</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
   </div>
 
   <main id="main">
 
     <!-- ===================== HOME ===================== -->
     <div class="page" id="page-home">
-      <section class="hero">
-        <div class="wrap hero-grid">
-          <div>
-            <span class="kicker">FCA Regulated Independent Brokers</span>
-            <h1>Interfinancial can help with <em class="accent">all your mortgage needs</em></h1>
-            <p class="lead">At Interfinancial we strive to find simple solutions to complicated matters for you. Our friendly team offers independent advice to guide you to the right decision across Shropshire, Cheshire and Staffordshire.</p>
-            <div class="hero-actions">
-              <a href="#calculator" class="btn">Calculate Mortgage <svg class="icon"><use href="#i-arrow" /></svg></a>
-              <a href="#contact" class="btn btn--ghost">Speak to an Adviser</a>
+
+      <!-- hero -->
+      <section class="panel flex min-h-[calc(100svh-1.5rem)] flex-col justify-end bg-night text-white md:min-h-[calc(100svh-2.5rem)]">
+        <img data-drift src="img/hero-couple.avif" width="1920" height="1100" alt="Couple cooking together in their kitchen" fetchpriority="high" class="absolute inset-0 size-full scale-[1.08] object-cover will-change-transform" />
+        <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/40"></div>
+        <div class="panel-pad wrap relative !pt-28 !pb-10 md:!pb-14">
+          <span class="eyebrow hero-in" style="--i:0">FCA Regulated Independent Brokers</span>
+          <h1 class="h-xl mt-5 max-w-[16ch]" aria-label="Interfinancial Can Help With All Your Mortgage Needs">
+            <span class="line"><span style="--i:0">Interfinancial</span></span>
+            <span class="line"><span style="--i:1">Can Help With
+              <a href="#calculator" aria-label="Calculate mortgage" class="ml-2 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-full bg-white/90 p-1.5 align-middle">
+                <img src="/img/paul.avif" width="305" height="384" alt="" class="size-[0.5em] min-h-9 min-w-9 rounded-full object-cover object-top" />
+                <img src="img/family.avif" width="900" height="1000" alt="" class="-ml-3 size-[0.5em] min-h-9 min-w-9 rounded-full object-cover" />
+                <span class="grid size-[0.5em] min-h-9 min-w-9 place-items-center rounded-full bg-primary-500 text-white"><svg class="icon !size-5"><use href="#i-arrow" /></svg></span>
+              </a></span></span>
+            <span class="line md:pl-[10vw]"><span class="thin" style="--i:2">All Your</span></span>
+            <span class="line md:pl-[4vw]"><span style="--i:3">Mortgage Needs</span></span>
+          </h1>
+
+          <div class="mt-8 grid items-end gap-8 lg:grid-cols-[1fr_auto]">
+            <div class="hero-in max-w-xl" style="--i:5">
+              <p class="text-lg text-white/85">At Interfinancial we strive to find simple solutions to complicated matters for you. Our friendly team offers independent advice to guide you to the right decision across Shropshire, Cheshire and Staffordshire.</p>
+              <div class="mt-7 flex flex-wrap gap-3">
+                <a href="#calculator" class="btn btn-light"><span>Calculate Mortgage</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+                <a href="#contact" class="btn btn-ghost !pr-6">Speak to an Adviser</a>
+              </div>
             </div>
-            <div class="stats">
-              <div class="stat"><strong>10k+</strong><span>Mortgage products searched</span></div>
-              <div class="stat"><strong>100%</strong><span>Independent advice</span></div>
-              <div class="stat"><strong>30+</strong><span>Years in financial services</span></div>
+            <div class="hero-in grid gap-3 sm:grid-cols-[auto_auto] lg:grid-cols-1" style="--i:6">
+              <div class="glass p-5 sm:min-w-64">
+                <div class="flex items-center justify-between">
+                  <span class="grid size-10 place-items-center rounded-full bg-white text-primary-700"><svg class="icon"><use href="#i-house" /></svg></span>
+                  <span class="rounded-full bg-white px-3 py-1 text-xs font-bold tracking-wider text-primary-700 uppercase">Approved</span>
+                </div>
+                <p class="mt-4 text-sm font-medium text-white/80">Estimated Rate</p>
+                <p class="font-display text-4xl font-bold">4.24%</p>
+                <div class="mt-3 flex gap-8 border-t border-white/20 pt-3">
+                  <div><p class="text-xs text-white/70">Monthly</p><p class="font-display text-lg font-bold">£1,240</p></div>
+                  <div><p class="text-xs text-white/70">Term</p><p class="font-display text-lg font-bold">25 Years</p></div>
+                </div>
+              </div>
+              <div class="glass flex items-center gap-3 self-end p-4">
+                <span class="grid size-10 place-items-center rounded-full bg-white text-primary-700"><svg class="icon"><use href="#i-shield" /></svg></span>
+                <div><p class="text-xs text-white/70">Product Access</p><p class="font-display text-lg font-bold">10,000+ Deals</p></div>
+              </div>
             </div>
-          </div>
-          <div class="hero-media">
-            <div class="shape shape--notch">
-              <img src="img/hero-keys.avif" width="900" height="1100" alt="Model house with keys on a desk" fetchpriority="high" />
-            </div>
-            <a href="#contact" class="round-link" aria-label="Speak to an adviser"><svg class="icon"><use href="#i-arrow" /></svg></a>
-            <div class="hero-tag"><i><svg class="icon"><use href="#i-shield" /></svg></i>Not tied to any lender</div>
           </div>
         </div>
       </section>
 
-      <section class="section section--white">
-        <div class="wrap">
-          <div class="section-head section-head--split rv">
-            <h2>Why choose us?</h2>
-            <p class="lead">We pride ourselves on offering independent, unbiased advice that puts your needs first.</p>
+      <!-- why choose us -->
+      <section class="panel bg-primary-600 text-white">
+        <div class="panel-pad wrap grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div class="rv">
+            <h2 class="h-lg"><span class="thin">Why</span><br />Choose Us?</h2>
+            <p class="mt-5 max-w-md text-primary-100">We pride ourselves on offering independent, unbiased advice that puts your needs first.</p>
+            <div class="notch mt-10 aspect-[5/4] overflow-hidden rounded-[2rem]"><img src="img/family.avif" width="900" height="1000" loading="lazy" alt="Family outside their home" class="size-full object-cover" /></div>
           </div>
-          <div class="why-grid">
-            <div class="why-item rv" style="--d:0"><span class="num">01</span><h3>Expert Knowledge</h3><p>Exclusive broker access to 10,000+ mortgage products and the best rates through advanced technology.</p></div>
-            <div class="why-item rv" style="--d:1"><span class="num">02</span><h3>Comprehensive Assistance</h3><p>Help with all types: first time buyers, home movers, re-mortgages, adverse credit, and equity release.</p></div>
-            <div class="why-item rv" style="--d:2"><span class="num">03</span><h3>Dedicated Advice</h3><p>Independent advisers not tied to any lender, finding the right insurance and mortgage for you.</p></div>
-            <div class="why-item rv" style="--d:3"><span class="num">04</span><h3>Speak To Our Team</h3><p>Totally independent advice covering Market Drayton, Telford, Shrewsbury, Stafford, Nantwich and Chester.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="services">
-        <div class="wrap services-grid">
-          <div class="services-aside rv">
-            <span class="kicker">What we do</span>
-            <h2 style="margin-top:1rem">Our services</h2>
-            <p class="lead" style="margin-top:1.25rem">Whatever your property goals, we provide the expertise to help you achieve them.</p>
-            <div class="shape"><img src="img/house-modern.avif" width="1200" height="800" loading="lazy" alt="Modern family home at dusk" /></div>
-          </div>
-          <div class="svc-list">
-            <a href="#mortgage-remortgages" class="svc rv"><span class="idx">01</span><h3>First Time Buyers</h3><span class="go"><svg class="icon"><use href="#i-arrow" /></svg></span><p>Step onto the property ladder with tailored guidance from our experienced brokers.</p></a>
-            <a href="#mortgage-remortgages" class="svc rv"><span class="idx">02</span><h3>Remortgages</h3><span class="go"><svg class="icon"><use href="#i-arrow" /></svg></span><p>Secure a better rate or release equity by giving us exclusive access to the best deals.</p></a>
-            <a href="#secured-loans" class="svc rv"><span class="idx">03</span><h3>Secured Loans</h3><span class="go"><svg class="icon"><use href="#i-arrow" /></svg></span><p>Find simple solutions for complicated financial matters with our secured loan offerings.</p></a>
-            <a href="#secured-loans" class="svc rv"><span class="idx">04</span><h3>Adverse Credit</h3><span class="go"><svg class="icon"><use href="#i-arrow" /></svg></span><p>Not everyone has perfect credit. We help find solutions for a variety of circumstances.</p></a>
-            <a href="#insurance-protection" class="svc rv"><span class="idx">05</span><h3>Insurance &amp; Protection</h3><span class="go"><svg class="icon"><use href="#i-arrow" /></svg></span><p>Life and general insurances chosen to protect you and your home, independent of any provider.</p></a>
+          <div class="grid content-center gap-3">
+            <div class="rv rounded-3xl bg-white/10 p-6 md:p-8" style="--d:0"><h3 class="display text-2xl"><span class="thin">Expert</span> Knowledge</h3><p class="mt-2 text-primary-100">Exclusive broker access to 10,000+ mortgage products and the best rates through advanced technology.</p></div>
+            <div class="rv rounded-3xl bg-white/10 p-6 md:p-8" style="--d:1"><h3 class="display text-2xl"><span class="thin">Comprehensive</span> Assistance</h3><p class="mt-2 text-primary-100">Help with all types: first time buyers, home movers, re-mortgages, adverse credit, and equity release.</p></div>
+            <div class="rv rounded-3xl bg-white/10 p-6 md:p-8" style="--d:2"><h3 class="display text-2xl"><span class="thin">Dedicated</span> Advice</h3><p class="mt-2 text-primary-100">Independent advisers not tied to any lender, finding the right insurance and mortgage for you.</p></div>
+            <div class="rv rounded-3xl bg-white/10 p-6 md:p-8" style="--d:3"><h3 class="display text-2xl"><span class="thin">Speak To</span> Our Team</h3><p class="mt-2 text-primary-100">Totally independent advice covering Market Drayton, Telford, Shrewsbury, Stafford, Nantwich and Chester.</p></div>
           </div>
         </div>
       </section>
 
-      <section class="section section--tight" id="calculator-section"><div class="wrap" data-slot="calculator"></div></section>
-
-      <section class="section section--white" id="process">
-        <div class="wrap">
-          <div class="section-head section-head--split rv">
-            <h2>Our simple process</h2>
-            <p class="lead">We take the stress out of securing a mortgage by managing the heavy lifting for you.</p>
-          </div>
-          <div class="steps">
-            <div class="step rv" style="--d:0"><span class="n">01</span><h3>Initial Consultation</h3><p>A quick chat to understand your goals, financial situation, and what you are looking for.</p></div>
-            <div class="step rv" style="--d:1"><span class="n">02</span><h3>Find Best Deal</h3><p>We scan the whole market to find the mortgage that perfectly suits your requirements.</p></div>
-            <div class="step rv" style="--d:2"><span class="n">03</span><h3>Application</h3><p>We handle all the paperwork and liaise with lenders, estate agents, and solicitors.</p></div>
-            <div class="step rv" style="--d:3"><span class="n">04</span><h3>Completion</h3><p>We monitor progress up to the day you get your keys, keeping you updated constantly.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="about">
-        <div class="wrap about-grid">
-          <div class="about-media rv">
-            <div class="shape"><img src="img/house-plans.avif" width="1100" height="820" loading="lazy" alt="House model on architectural plans" /></div>
-            <div class="shape shape--b"><img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick, Director" /></div>
-          </div>
-          <div class="about-copy rv">
-            <span class="kicker">About us</span>
-            <h2 style="margin-block:1rem 1.5rem">Expert advice built on <em class="accent">trust &amp; transparency</em></h2>
-            <p class="muted">At Interfinancial we strive to find simple solutions to complicated matters for you, such as mortgages and insurance. Our friendly and approachable team are experienced in offering independent mortgage advice that will help guide you towards making the right decision.</p>
-            <p class="muted">We are proud to not be tied to any high street bank or building society. This allows us to always offer you totally independent advice when you speak to us. If you are in Market Drayton, Telford, Shrewsbury, Stafford, Stoke-on-Trent, Nantwich or Chester, you won't find better expertise anywhere else.</p>
-            <div class="about-stats">
-              <div class="stat"><strong>10k+</strong><span>Products searched</span></div>
-              <div class="stat"><strong>100%</strong><span>Independent advice</span></div>
-              <div class="stat"><strong>7+</strong><span>Regions covered</span></div>
-              <div class="stat"><strong>FCA</strong><span>Regulated broker</span></div>
+      <!-- services -->
+      <section id="services" class="panel bg-primary-200">
+        <div class="panel-pad wrap">
+          <div class="rv flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <h2 class="h-lg"><span class="thin">Our</span> Services</h2>
+              <p class="mt-4 max-w-lg text-lg text-primary-900">Whatever your property goals, we provide the expertise to help you achieve them.</p>
             </div>
+            <a href="#contact" class="btn self-start"><span>View all services</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+          </div>
+          <div class="mt-12 grid gap-4 lg:grid-cols-6">
+            <a href="#mortgage-remortgages" class="rv group flex flex-col justify-between rounded-[2rem] bg-primary-950 p-7 text-white lg:col-span-2" style="--d:0">
+              <div><span class="grid size-14 place-items-center rounded-2xl bg-white/10 text-primary-300"><svg class="icon !size-7"><use href="#i-house" /></svg></span>
+                <h3 class="display mt-12 text-2xl font-bold">First Time Buyers</h3>
+                <p class="mt-3 text-primary-200">Step onto the property ladder with tailored guidance from our experienced brokers.</p></div>
+              <span class="mt-8 flex items-center gap-2 text-sm font-semibold">Learn more <svg class="icon transition-transform duration-300 group-hover:translate-x-1"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a href="#mortgage-remortgages" class="rv group flex flex-col justify-between rounded-[2rem] bg-primary-950 p-7 text-white lg:col-span-2" style="--d:1">
+              <div><span class="grid size-14 place-items-center rounded-2xl bg-white/10 text-primary-300"><svg class="icon !size-7"><use href="#i-repeat" /></svg></span>
+                <h3 class="display mt-12 text-2xl font-bold">Remortgages</h3>
+                <p class="mt-3 text-primary-200">Secure a better rate or release equity by giving us exclusive access to the best deals.</p></div>
+              <span class="mt-8 flex items-center gap-2 text-sm font-semibold">Learn more <svg class="icon transition-transform duration-300 group-hover:translate-x-1"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a href="#secured-loans" class="rv group flex flex-col justify-between rounded-[2rem] bg-primary-950 p-7 text-white lg:col-span-2" style="--d:2">
+              <div><span class="grid size-14 place-items-center rounded-2xl bg-white/10 text-primary-300"><svg class="icon !size-7"><use href="#i-lock" /></svg></span>
+                <h3 class="display mt-12 text-2xl font-bold">Secured Loans</h3>
+                <p class="mt-3 text-primary-200">Find simple solutions for complicated financial matters with our secured loan offerings.</p></div>
+              <span class="mt-8 flex items-center gap-2 text-sm font-semibold">Learn more <svg class="icon transition-transform duration-300 group-hover:translate-x-1"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a href="#secured-loans" class="rv group flex flex-col justify-between rounded-[2rem] bg-primary-600 p-7 text-white lg:col-span-3" style="--d:3">
+              <div><span class="grid size-14 place-items-center rounded-2xl bg-white/15"><svg class="icon !size-7"><use href="#i-card" /></svg></span>
+                <h3 class="display mt-12 text-2xl font-bold">Adverse Credit</h3>
+                <p class="mt-3 text-primary-100">Not everyone has perfect credit. We help find solutions for a variety of circumstances.</p></div>
+              <span class="mt-8 flex items-center gap-2 text-sm font-semibold">Learn more <svg class="icon transition-transform duration-300 group-hover:translate-x-1"><use href="#i-arrow" /></svg></span>
+            </a>
+            <a href="#insurance-protection" class="rv group flex flex-col justify-between rounded-[2rem] bg-primary-950 p-7 text-white lg:col-span-3" style="--d:4">
+              <div><span class="grid size-14 place-items-center rounded-2xl bg-white/10 text-primary-300"><svg class="icon !size-7"><use href="#i-shield" /></svg></span>
+                <h3 class="display mt-12 text-2xl font-bold">Insurance &amp; Protection</h3>
+                <p class="mt-3 text-primary-200">Life and general insurances chosen to protect you and your home, independent of any provider.</p></div>
+              <span class="mt-8 flex items-center gap-2 text-sm font-semibold">Learn more <svg class="icon transition-transform duration-300 group-hover:translate-x-1"><use href="#i-arrow" /></svg></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- about: full-bleed photo panel with staggered statement -->
+      <section id="about" class="panel bg-night text-white">
+        <img src="img/night-house.avif" width="1800" height="1000" loading="lazy" alt="" class="absolute inset-0 size-full object-cover opacity-70" />
+        <div class="absolute inset-0 bg-linear-to-b from-night/60 to-night/90"></div>
+        <div class="panel-pad wrap relative">
+          <span class="eyebrow rv">About Us</span>
+          <h2 class="h-xl rv mt-6 max-w-[14ch]"><span class="thin">Expert Advice</span> Built on <span class="block md:pl-[12vw]">Trust &amp; Transparency</span></h2>
+          <div class="mt-14 grid gap-8 lg:grid-cols-2">
+            <p class="rv text-lg text-white/85">At Interfinancial we strive to find simple solutions to complicated matters for you, such as mortgages and insurance. Our friendly and approachable team are experienced in offering independent mortgage advice that will help guide you towards making the right decision.</p>
+            <p class="rv text-lg text-white/85" style="--d:1">We are proud to not be tied to any high street bank or building society. This allows us to always offer you totally independent advice when you speak to us. If you are in Market Drayton, Telford, Shrewsbury, Stafford, Stoke-on-Trent, Nantwich or Chester, you won't find better expertise anywhere else.</p>
+          </div>
+          <div class="mt-14 grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div class="glass rv p-6" style="--d:0"><p class="font-display text-5xl font-bold">10k+</p><p class="mt-1 text-sm text-white/80">Products Searched</p></div>
+            <div class="glass rv p-6" style="--d:1"><p class="font-display text-5xl font-bold">100%</p><p class="mt-1 text-sm text-white/80">Independent Advice</p></div>
+            <div class="glass rv p-6" style="--d:2"><p class="font-display text-5xl font-bold">7+</p><p class="mt-1 text-sm text-white/80">Regions Covered</p></div>
+            <div class="glass rv p-6" style="--d:3"><p class="font-display text-5xl font-bold">FCA</p><p class="mt-1 text-sm text-white/80">Regulated Broker</p></div>
+          </div>
+        </div>
+      </section>
+
+      <div data-slot="calculator"></div>
+
+      <!-- process -->
+      <section id="process" class="panel bg-primary-950 text-white">
+        <div class="panel-pad wrap">
+          <div class="rv flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <h2 class="h-lg"><span class="thin">Our Simple</span> Process</h2>
+            <p class="max-w-md text-primary-200">We take the stress out of securing a mortgage by managing the heavy lifting for you.</p>
+          </div>
+          <div class="-mx-6 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
+            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:0">
+              <img src="img/card-modern.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
+              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">01</p><h3 class="display mt-3 text-xl font-bold">Initial Consultation</h3><p class="mt-2 text-sm text-primary-200">A quick chat to understand your goals, financial situation, and what you are looking for.</p></div>
+            </article>
+            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:1">
+              <img src="img/card-farm.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
+              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">02</p><h3 class="display mt-3 text-xl font-bold">Find Best Deal</h3><p class="mt-2 text-sm text-primary-200">We scan the whole market to find the mortgage that perfectly suits your requirements.</p></div>
+            </article>
+            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:2">
+              <img src="img/card-contemporary.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
+              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">03</p><h3 class="display mt-3 text-xl font-bold">Application</h3><p class="mt-2 text-sm text-primary-200">We handle all the paperwork and liaise with lenders, estate agents, and solicitors.</p></div>
+            </article>
+            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:3">
+              <img src="img/card-interior.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
+              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">04</p><h3 class="display mt-3 text-xl font-bold">Completion</h3><p class="mt-2 text-sm text-primary-200">We monitor progress up to the day you get your keys, keeping you updated constantly.</p></div>
+            </article>
           </div>
         </div>
       </section>
@@ -155,332 +245,392 @@
 
     <!-- ===================== MORTGAGES ===================== -->
     <div class="page" id="page-mortgage-remortgages" hidden>
-      <section class="page-hero">
-        <div class="wrap page-hero-grid">
-          <div>
-            <span class="kicker">Mortgage / Remortgages</span>
-            <h1>Find the mortgage that <em class="accent">fits you</em></h1>
-            <p class="lead">We are a trusted choice to help you find the mortgage or remortgage product you require today.</p>
-          </div>
-          <div class="shape"><img src="img/house-plans.avif" width="1100" height="820" alt="House model on architectural plans" /></div>
+      <section class="panel flex min-h-[78svh] flex-col justify-end bg-night text-white">
+        <img src="img/house-plans.avif" width="1100" height="820" alt="House model on architectural plans" class="absolute inset-0 size-full object-cover" />
+        <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/55 to-night/30"></div>
+        <div class="panel-pad wrap relative pt-36">
+          <h1 class="h-xl rv max-w-[12ch]"><span class="thin">Mortgage /</span> Remortgages</h1>
+          <p class="rv mt-6 max-w-xl text-xl text-white/90">We are a trusted choice to help you find the mortgage or remortgage product you require today.</p>
         </div>
       </section>
 
-      <section class="section section--tight"><div class="wrap">
-        <div class="prose rv" style="max-width:46rem;margin-bottom:3rem">
-          <p>Choosing the right mortgage can be a daunting process. Whether you're a first-time buyer taking your first step onto the property ladder, or you're looking to remortgage an existing property, our expert team is here to help.</p>
-        </div>
-        <div class="pair">
-          <div class="tile rv"><h3>Expert Knowledge</h3><p>Exclusive broker access allows us to unlock interest rates and mortgage products that you simply won't find on the high street. Our experienced brokers understand the nuances of the market.</p></div>
-          <div class="tile rv"><h3>Comprehensive Assistance</h3><p>From first-time buyers and home movers to buy-to-let investors and those with adverse credit history, we tailor our approach to your unique circumstances and financial goals.</p></div>
-          <div class="tile rv"><h3>Dedicated Advice</h3><p>As independent brokers, we compare the wider market to ensure you not only get a great mortgage, but the right protection and insurance policies alongside it.</p></div>
-          <div class="tile tile--dark rv"><h3>Speak to Our Team</h3><p>We are not tied to any bank or building society. We work for you. Let our friendly team lift the burden and paperwork from your shoulders so you can focus on what matters.</p></div>
-        </div>
-      </div></section>
-
-      <section class="section section--white"><div class="wrap">
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">From Paul</span><h2>My areas of expertise</h2></div>
-          <div class="prose"><p>I've always worked hard towards making sure my clients receive the best mortgage services for all their property financing needs. Working with Interfinancial means having my personal support for a variety of services as well as the knowledge and resources that come with years of experience in the mortgage industry.</p></div>
-        </div>
-        <div class="band rv">
-          <div class="band-label"><h2>Find out more about Standard Variable Rate (SVR)</h2></div>
-          <div class="prose">
-            <p>The SVR is the lender's standard variable rate, usually between 2-4% above the Bank of England base rate. With a variable rate mortgage you are able to switch lenders at any time without being penalised. If you start a mortgage with a different type of interest repayment for an agreed term, once the term finishes you will go back to the lenders SVR.</p>
-            <h3>Fixed Rate Safety</h3>
-            <p>A fixed rate mortgage allows you to repay interest at a fixed rate, irrespective of any base rate fluctuations. In other words your monthly repayments will remain the same every month for a time period agreed between you and your lender. This is usually up to 25 years.</p>
-            <p>Contact us today in Market Drayton, Shropshire for more help on the different types of mortgages available to you.</p>
+      <section class="panel bg-paper">
+        <div class="panel-pad wrap">
+          <p class="rv max-w-4xl font-display text-[clamp(1.5rem,3vw,2.5rem)] leading-tight font-medium">Choosing the right mortgage can be a daunting process. Whether you're a first-time buyer taking your first step onto the property ladder, or you're looking to remortgage an existing property, our expert team is here to help.</p>
+          <div class="mt-12 grid gap-4 md:grid-cols-2">
+            <div class="rv rounded-[2rem] bg-white p-8"><h3 class="display text-2xl font-bold">Expert Knowledge</h3><p class="mt-3 text-primary-900/80">Exclusive broker access allows us to unlock interest rates and mortgage products that you simply won't find on the high street. Our experienced brokers understand the nuances of the market.</p></div>
+            <div class="rv rounded-[2rem] bg-white p-8" style="--d:1"><h3 class="display text-2xl font-bold">Comprehensive Assistance</h3><p class="mt-3 text-primary-900/80">From first-time buyers and home movers to buy-to-let investors and those with adverse credit history, we tailor our approach to your unique circumstances and financial goals.</p></div>
+            <div class="rv rounded-[2rem] bg-white p-8"><h3 class="display text-2xl font-bold">Dedicated Advice</h3><p class="mt-3 text-primary-900/80">As independent brokers, we compare the wider market to ensure you not only get a great mortgage, but the right protection and insurance policies alongside it.</p></div>
+            <div class="rv rounded-[2rem] bg-primary-950 p-8 text-white" style="--d:1"><h3 class="display text-2xl font-bold">Speak to Our Team</h3><p class="mt-3 text-primary-200">We are not tied to any bank or building society. We work for you. Let our friendly team lift the burden and paperwork from your shoulders so you can focus on what matters.</p></div>
           </div>
         </div>
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Specialist advice</span><h2>Mortgages for buying property abroad</h2></div>
-          <div class="prose">
+      </section>
+
+      <section class="panel bg-primary-600 text-white">
+        <div class="panel-pad wrap grid items-center gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+          <div class="rv notch aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem]"><img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick" class="size-full object-cover object-top" /></div>
+          <div class="rv">
+            <h2 class="h-lg"><span class="thin">My Areas of</span> Expertise</h2>
+            <p class="mt-6 max-w-2xl text-lg text-primary-100">I've always worked hard towards making sure my clients receive the best mortgage services for all their property financing needs. Working with Interfinancial means having my personal support for a variety of services as well as the knowledge and resources that come with years of experience in the mortgage industry.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel bg-primary-100">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div class="rv">
+            <h2 class="h-md"><span class="thin">Find out more about</span> Standard Variable Rate (SVR)</h2>
+            <p class="mt-5 text-primary-900/80">The SVR is the lender's standard variable rate, usually between 2-4% above the Bank of England base rate. With a variable rate mortgage you are able to switch lenders at any time without being penalised. If you start a mortgage with a different type of interest repayment for an agreed term, once the term finishes you will go back to the lenders SVR.</p>
+          </div>
+          <div class="rv rounded-[2rem] bg-white p-8 md:p-10" style="--d:1">
+            <h3 class="display text-3xl font-bold">Fixed Rate Safety</h3>
+            <p class="mt-4 text-primary-900/80">A fixed rate mortgage allows you to repay interest at a fixed rate, irrespective of any base rate fluctuations. In other words your monthly repayments will remain the same every month for a time period agreed between you and your lender. This is usually up to 25 years.</p>
+            <p class="mt-4 font-semibold">Contact us today in Market Drayton, Shropshire for more help on the different types of mortgages available to you.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel bg-primary-950 text-white">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <div class="rv">
+            <span class="eyebrow">Specialist Advice</span>
+            <h2 class="h-lg mt-6">Mortgages for <span class="thin">Buying Property</span> Abroad</h2>
+          </div>
+          <div class="rv text-primary-100">
             <p>If you are considering buying a property abroad you should make sure you take specialist mortgage advice. The house buying process varies considerably from country to country, with different legal systems and local customs. For most people the best option is to arrange your overseas mortgage in the currency you earn income in. If however you are planning to receive rental income from your property in the local currency then a mortgage in the local currency may be the better option, depending on the mortgage lender's criteria.</p>
-            <ul class="checks">
-              <li><svg class="icon"><use href="#i-check" /></svg>If you already have a residential property in the UK you may be able to raise money for a deposit by remortgaging and releasing equity from this property.</li>
-              <li><svg class="icon"><use href="#i-check" /></svg>You should always seek specialist advice from independent solicitors, architects and surveyors before committing to purchasing a property overseas. They should know the country's laws and the local house buying process.</li>
-              <li><svg class="icon"><use href="#i-check" /></svg>You should always arrange an independent valuation of the property. The valuation will highlight any problems with the property itself but also, and very importantly, any boundary disputes.</li>
-              <li><svg class="icon"><use href="#i-check" /></svg>You should never sign a contract that you do not understand. This includes translated contracts - always get the original contract checked by a specialist.</li>
+            <ul class="mt-6 grid gap-4">
+              <li class="flex gap-3 rounded-2xl bg-white/5 p-5"><svg class="icon mt-1 text-primary-400"><use href="#i-check" /></svg>If you already have a residential property in the UK you may be able to raise money for a deposit by remortgaging and releasing equity from this property.</li>
+              <li class="flex gap-3 rounded-2xl bg-white/5 p-5"><svg class="icon mt-1 text-primary-400"><use href="#i-check" /></svg>You should always seek specialist advice from independent solicitors, architects and surveyors before committing to purchasing a property overseas. They should know the country's laws and the local house buying process.</li>
+              <li class="flex gap-3 rounded-2xl bg-white/5 p-5"><svg class="icon mt-1 text-primary-400"><use href="#i-check" /></svg>You should always arrange an independent valuation of the property. The valuation will highlight any problems with the property itself but also, and very importantly, any boundary disputes.</li>
+              <li class="flex gap-3 rounded-2xl bg-white/5 p-5"><svg class="icon mt-1 text-primary-400"><use href="#i-check" /></svg>You should never sign a contract that you do not understand. This includes translated contracts - always get the original contract checked by a specialist.</li>
             </ul>
-            <p>If you would like to discuss your options then please contact us for a Free inital meeting in Market Drayton, Telford, Shrewsbury and the surrounding areas.</p>
-            <a href="#contact" class="inline-link" style="justify-self:start">Book a Free Meeting <svg class="icon"><use href="#i-arrow" /></svg></a>
+            <p class="mt-6">If you would like to discuss your options then please contact us for a Free inital meeting in Market Drayton, Telford, Shrewsbury and the surrounding areas.</p>
+            <a href="#contact" class="btn btn-light mt-6"><span>Book a Free Meeting</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
           </div>
         </div>
-        <div class="band rv">
-          <div class="band-label"><h2>Advice on residential and buy to let re-mortgages</h2></div>
-          <div class="prose">
-            <p>If you are looking to remortgage to raise additional funds to carry out home improvements, consolidate debts, buy a second property or even re-mortgage your buy to let investment property, then we can advise you on the best route to take.</p>
-            <p>If you are simply looking to save money on a re-mortgage contact us today in Market Drayton, Telford, Shrewsbury, Nantwich, Crewe and Chester.</p>
-            <div class="callout"><strong>Taking careful steps.</strong> Always think carefully before securing or consolidating debts against your home by way of a re-mortgage. Consolidating debts by re-mortgaging may be more affordable each month in the short term but may cost you more overall in the long term as the mortgage loan repayments are spread over a longer period. We can assist you with this decision making process.</div>
-            <a href="#contact" class="inline-link" style="justify-self:start">Get Started Today <svg class="icon"><use href="#i-arrow" /></svg></a>
-          </div>
-        </div>
-      </div></section>
+      </section>
 
-      <section class="section section--tight"><div class="wrap" data-slot="calculator"></div></section>
+      <section class="panel bg-paper">
+        <div class="panel-pad wrap grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div class="rv">
+            <h2 class="h-lg"><span class="thin">Advice on</span> Residential and Buy to Let Re-mortgages</h2>
+            <p class="mt-6 text-lg text-primary-900/80">If you are looking to remortgage to raise additional funds to carry out home improvements, consolidate debts, buy a second property or even re-mortgage your buy to let investment property, then we can advise you on the best route to take.</p>
+            <p class="mt-4 text-lg text-primary-900/80">If you are simply looking to save money on a re-mortgage contact us today in Market Drayton, Telford, Shrewsbury, Nantwich, Crewe and Chester.</p>
+          </div>
+          <div class="rv rounded-[2rem] bg-primary-600 p-8 text-white md:p-10" style="--d:1">
+            <h3 class="display text-3xl font-bold">Taking Careful Steps</h3>
+            <p class="mt-4 text-primary-100">Always think carefully before securing or consolidating debts against your home by way of a re-mortgage. Consolidating debts by re-mortgaging may be more affordable each month in the short term but may cost you more overall in the long term as the mortgage loan repayments are spread over a longer period. We can assist you with this decision making process.</p>
+            <a href="#contact" class="btn btn-light mt-7"><span>Get Started Today</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+          </div>
+        </div>
+      </section>
+
+      <div data-slot="calculator"></div>
     </div>
 
     <!-- ===================== SECURED LOANS ===================== -->
     <div class="page" id="page-secured-loans" hidden>
-      <section class="page-hero">
-        <div class="wrap page-hero-grid">
-          <div>
-            <span class="kicker">Secured loans</span>
-            <h1>Secured loans in <em class="accent">Market Drayton, Shrewsbury and Telford</em></h1>
-            <p class="lead">A secured loan otherwise known as a 'Second Charge Loan' is a second mortgage against your residential or buy to let investment property. This ranks behind your main mortgage and allows you to use some equity value you have in the property as security for another loan.</p>
-          </div>
-          <div class="shape"><img src="img/house-pool.avif" width="1100" height="740" alt="Family home with pool" /></div>
+      <section class="panel flex min-h-[78svh] flex-col justify-end bg-night text-white">
+        <img src="img/pool-hero.avif" width="1800" height="1000" alt="Modern home with swimming pool" class="absolute inset-0 size-full object-cover" />
+        <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
+        <div class="panel-pad wrap relative pt-36">
+          <h1 class="h-xl rv max-w-[15ch]"><span class="thin">Secured Loans in</span> Market Drayton, Shrewsbury and Telford</h1>
+          <p class="rv mt-6 max-w-3xl text-lg text-white/90">A secured loan otherwise known as a 'Second Charge Loan' is a second mortgage against your residential or buy to let investment property. This ranks behind your main mortgage and allows you to use some equity value you have in the property as security for another loan.</p>
         </div>
       </section>
 
-      <section class="section section--white"><div class="wrap">
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Why consider this?</span><h2>Reasons for considering a secured loan</h2></div>
-          <ul class="checks">
-            <li><svg class="icon"><use href="#i-check" /></svg>You wish to retain preferential terms for your existing mortgage, for example, a very low lifetime tracker interest rate.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You have an impaired credit history, failed credit score or an IVA (Debt Management Plan).</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You are an older borrower who is struggling to get credit.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You have complex financial affairs.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You are self-employed, have short term employment history or have recently changed jobs.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You need a higher loan-to-value than is otherwise available.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You have recently started trading as a limited company, partnership or sole trader.</li>
-            <li><svg class="icon"><use href="#i-check" /></svg>You need a loan for reasons not usually permitted by other forms of lending.</li>
+      <section class="panel bg-paper">
+        <div class="panel-pad wrap">
+          <div class="rv"><span class="eyebrow text-primary-700">Why consider this?</span>
+            <h2 class="h-lg mt-6 max-w-3xl"><span class="thin">Reasons for considering</span> a Secured Loan:</h2></div>
+          <ul class="mt-12 grid gap-3 md:grid-cols-2">
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6"><span class="font-display text-2xl font-bold text-primary-600">01</span>You wish to retain preferential terms for your existing mortgage, for example, a very low lifetime tracker interest rate.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6" style="--d:1"><span class="font-display text-2xl font-bold text-primary-600">02</span>You have an impaired credit history, failed credit score or an IVA (Debt Management Plan).</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6"><span class="font-display text-2xl font-bold text-primary-600">03</span>You are an older borrower who is struggling to get credit.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6" style="--d:1"><span class="font-display text-2xl font-bold text-primary-600">04</span>You have complex financial affairs.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6"><span class="font-display text-2xl font-bold text-primary-600">05</span>You are self-employed, have short term employment history or have recently changed jobs.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6" style="--d:1"><span class="font-display text-2xl font-bold text-primary-600">06</span>You need a higher loan-to-value than is otherwise available.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6"><span class="font-display text-2xl font-bold text-primary-600">07</span>You have recently started trading as a limited company, partnership or sole trader.</li>
+            <li class="rv flex gap-4 rounded-3xl bg-white p-6" style="--d:1"><span class="font-display text-2xl font-bold text-primary-600">08</span>You need a loan for reasons not usually permitted by other forms of lending.</li>
           </ul>
         </div>
-        <div class="band rv">
-          <div class="band-label"><h2>Flexible uses for your loan</h2></div>
-          <div class="prose">
-            <p>There is not a strict or set criteria for what a second charge loan can or cannot be used for. One of the advantages is the flexibility it offers. Examples include:</p>
-            <ul class="chips">
-              <li>Debt consolidation</li><li>Tax bills</li><li>Home improvements</li><li>Business purposes</li><li>Purchase a Buy to Let Property</li><li>Weddings</li><li>School fees</li><li>Helping family financially</li>
-            </ul>
-          </div>
-        </div>
-        <div class="band rv">
-          <div class="band-label"><h2>Interest rates for second charge loans</h2></div>
-          <div class="prose">
-            <p>Interest rates for second charge loans typically start at around</p>
-            <div class="rate"><b>4.5%</b><span>per annum</span></div>
-            <p>...with minimal penalty tie-in periods.</p>
-            <div class="callout"><strong>* Interfinancial is an INDEPENDENT Mortgage Broker authorised to advise on and arrange Secured Loan borrowing in Market Drayton, Shrewsbury and Telford. *</strong><br />Interfinancial recommends arranging a suitable life assurance and critical illness plan to cover the additional borrowing in the event of death or an earlier serious illness. We are able to assist you with this matter, if required.</div>
-            <a href="#contact" class="inline-link" style="justify-self:start">Discuss your options <svg class="icon"><use href="#i-arrow" /></svg></a>
-          </div>
-        </div>
-      </div></section>
+      </section>
 
-      <section class="section section--tight"><div class="wrap" data-slot="calculator"></div></section>
+      <section class="panel bg-primary-600 text-white">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div class="rv">
+            <h2 class="h-lg"><span class="thin">Flexible uses for</span> your loan</h2>
+            <p class="mt-6 max-w-md text-lg text-primary-100">There is not a strict or set criteria for what a second charge loan can or cannot be used for. One of the advantages is the flexibility it offers. Examples include:</p>
+          </div>
+          <ul class="rv flex flex-wrap content-center gap-2.5" style="--d:1">
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Debt consolidation</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Tax bills</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Home improvements</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Business purposes</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Purchase a Buy to Let Property</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Weddings</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">School fees</li>
+            <li class="rounded-full bg-white px-5 py-3 font-semibold text-primary-950">Helping family financially</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="panel bg-primary-100">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div class="rv">
+            <h2 class="h-md"><span class="thin">Interest rates for</span> second charge loans</h2>
+            <p class="mt-5 text-lg text-primary-900/80">typically start at around</p>
+            <p class="mt-2 font-display text-[clamp(4rem,10vw,8rem)] leading-none font-bold text-primary-600">4.5%<span class="ml-3 text-2xl font-light text-primary-950">per annum</span></p>
+            <p class="mt-3 text-lg text-primary-900/80">...with minimal penalty tie-in periods.</p>
+          </div>
+          <div class="rv rounded-[2rem] bg-white p-8 md:p-10" style="--d:1">
+            <p class="font-semibold">* Interfinancial is an INDEPENDENT Mortgage Broker authorised to advise on and arrange Secured Loan borrowing in Market Drayton, Shrewsbury and Telford. *</p>
+            <p class="mt-4 text-primary-900/80">Interfinancial recommends arranging a suitable life assurance and critical illness plan to cover the additional borrowing in the event of death or an earlier serious illness. We are able to assist you with this matter, if required.</p>
+            <a href="#contact" class="btn mt-7"><span>Discuss your options</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+          </div>
+        </div>
+      </section>
+
+      <div data-slot="calculator"></div>
     </div>
 
     <!-- ===================== INSURANCE ===================== -->
     <div class="page" id="page-insurance-protection" hidden>
-      <section class="page-hero">
-        <div class="wrap page-hero-grid">
-          <div>
-            <span class="kicker">Protection &amp; Insurance</span>
-            <h1>Life insurance in Shrewsbury, Telford and <em class="accent">throughout Shropshire</em></h1>
-            <p class="lead">Providing financial protection for your loved ones against the financial outcomes of an unexpected death, illness or injury.</p>
-          </div>
-          <div class="shape"><img src="img/house-modern.avif" width="1200" height="800" alt="Modern family home at dusk" /></div>
+      <section class="panel flex min-h-[78svh] flex-col justify-end bg-night text-white">
+        <img src="img/family-wide.avif" width="1800" height="1000" alt="Family outside their home" class="absolute inset-0 size-full object-cover" />
+        <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
+        <div class="panel-pad wrap relative pt-36">
+          <span class="eyebrow rv">Protection &amp; Insurance</span>
+          <h1 class="h-xl rv mt-6 max-w-[16ch]"><span class="thin">Life Insurance in</span> Shrewsbury, Telford and Throughout Shropshire</h1>
+          <p class="rv mt-6 max-w-2xl text-xl text-white/90">Providing financial protection for your loved ones against the financial outcomes of an unexpected death, illness or injury.</p>
         </div>
       </section>
 
-      <section class="section section--white"><div class="wrap">
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Life cover</span><h2>Family life insurance</h2></div>
-          <div class="prose">
-            <p>Family life insurance is a way of providing financial protection for your loved ones against the financial outcomes of an unexpected death. There are various types of policies available that can be chosen for your specific needs.</p>
-            <p>The amount of cover you need should take into consideration any financial commitments there may be, such as mortgage payments, loans and other regular expenses.</p>
-            <h3>Understand your options</h3>
-            <div class="pair">
-              <div class="tile"><h3>Interest-only</h3><p>Ensures the outstanding balance remains approximately the same throughout the mortgage term. This can be protected by mortgage level life assurance. This provides an amount of life cover for you that remains the same throughout the term.</p></div>
-              <div class="tile"><h3>Capital and Interest</h3><p>The outstanding balance usually reduces each year. This can be protected by mortgage decreasing life assurance, which provides an amount of life cover that will decrease over the policy term.</p></div>
+      <section class="panel bg-paper">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+          <div class="rv">
+            <h2 class="h-lg"><span class="thin">Family</span> Life Insurance</h2>
+            <p class="mt-6 text-lg text-primary-900/80">Family life insurance is a way of providing financial protection for your loved ones against the financial outcomes of an unexpected death. There are various types of policies available that can be chosen for your specific needs.</p>
+            <p class="mt-4 text-lg text-primary-900/80">The amount of cover you need should take into consideration any financial commitments there may be, such as mortgage payments, loans and other regular expenses.</p>
+          </div>
+          <div class="rv" style="--d:1">
+            <h3 class="display text-2xl font-bold">Understand Your Options</h3>
+            <div class="mt-5 grid gap-3">
+              <div class="rounded-[2rem] bg-white p-7"><h3 class="display text-xl font-bold text-primary-600">Interest-only</h3><p class="mt-2 text-primary-900/80">Ensures the outstanding balance remains approximately the same throughout the mortgage term. This can be protected by mortgage level life assurance. This provides an amount of life cover for you that remains the same throughout the term.</p></div>
+              <div class="rounded-[2rem] bg-white p-7"><h3 class="display text-xl font-bold text-primary-600">Capital and Interest</h3><p class="mt-2 text-primary-900/80">The outstanding balance usually reduces each year. This can be protected by mortgage decreasing life assurance, which provides an amount of life cover that will decrease over the policy term.</p></div>
             </div>
           </div>
         </div>
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Commercial &amp; professional cover</span><h2>Protection for your business</h2><p class="muted">Comprehensive protection for your business, employees, and professional services.</p></div>
-          <div class="prose">
-            <h3 style="margin-top:0">Commercial and Business Insurance</h3>
-            <p>Shop, office, restaurant and pub, clubs and nightclubs, office at home, professional indemnity, product, employers and public liability, commercial legal expenses, keyman and directors, business interruption, farm and agriculture, loss of licence, stock material damage, every type of commercial and business insurance cover available.</p>
-            <div class="pair">
-              <div class="tile"><h3>Professional Indemnity Insurance</h3>
-                <ul class="checks">
-                  <li><svg class="icon"><use href="#i-check" /></svg>Protects you if a client makes a claim against you due to problems with work you have done for them</li>
-                  <li><svg class="icon"><use href="#i-check" /></svg>Profession-specific policies designed to cover the risks you face in your industry</li>
-                  <li><svg class="icon"><use href="#i-check" /></svg>Flexible policies so you can change your level of cover at any time to suit the projects you're working on</li>
-                </ul></div>
-              <div class="tile"><h3>Public and Employers' Liability</h3>
-                <ul class="checks">
-                  <li><svg class="icon"><use href="#i-check" /></svg>Covers you when you have to pay compensation for an accident and your business is at fault</li>
-                  <li><svg class="icon"><use href="#i-check" /></svg>Protection for claims made by a client, contractor, member of the public or an employee</li>
-                  <li><svg class="icon"><use href="#i-check" /></svg>Protection both within and outside the workplace</li>
-                </ul></div>
-            </div>
+      </section>
+
+      <section class="panel bg-primary-600 text-white">
+        <div class="panel-pad wrap">
+          <div class="rv"><h2 class="h-lg"><span class="thin">Commercial &amp;</span> Professional Cover</h2>
+            <p class="mt-5 max-w-xl text-lg text-primary-100">Comprehensive protection for your business, employees, and professional services.</p></div>
+          <div class="rv mt-10 rounded-[2rem] bg-white/10 p-7 md:p-9"><h3 class="display text-2xl font-bold">Commercial and Business Insurance</h3>
+            <p class="mt-3 text-primary-100">Shop, office, restaurant and pub, clubs and nightclubs, office at home, professional indemnity, product, employers and public liability, commercial legal expenses, keyman and directors, business interruption, farm and agriculture, loss of licence, stock material damage, every type of commercial and business insurance cover available.</p></div>
+          <div class="mt-3 grid gap-3 md:grid-cols-2">
+            <div class="rv rounded-[2rem] bg-white p-7 text-primary-950 md:p-9"><h3 class="display text-2xl font-bold">Professional Indemnity Insurance</h3>
+              <ul class="checks mt-4 grid gap-3 text-primary-900/80">
+                <li><svg class="icon"><use href="#i-check" /></svg>Protects you if a client makes a claim against you due to problems with work you have done for them</li>
+                <li><svg class="icon"><use href="#i-check" /></svg>Profession-specific policies designed to cover the risks you face in your industry</li>
+                <li><svg class="icon"><use href="#i-check" /></svg>Flexible policies so you can change your level of cover at any time to suit the projects you're working on</li>
+              </ul></div>
+            <div class="rv rounded-[2rem] bg-white p-7 text-primary-950 md:p-9" style="--d:1"><h3 class="display text-2xl font-bold">Public and Employers' Liability</h3>
+              <ul class="checks mt-4 grid gap-3 text-primary-900/80">
+                <li><svg class="icon"><use href="#i-check" /></svg>Covers you when you have to pay compensation for an accident and your business is at fault</li>
+                <li><svg class="icon"><use href="#i-check" /></svg>Protection for claims made by a client, contractor, member of the public or an employee</li>
+                <li><svg class="icon"><use href="#i-check" /></svg>Protection both within and outside the workplace</li>
+              </ul></div>
           </div>
         </div>
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Health &amp; wellbeing</span><h2>Private medical insurance</h2></div>
-          <div class="prose">
-            <p>Private medical insurance is normally seen as a necessity by many people to ensure they get to choose when, where and with whom they are treated, rather than accept the vagaries of NHS care.</p>
-            <p>Many ailments can be 'nipped in the bud' if promptly and effectively treated rather than causing longer recovery times if ignored or when waiting times for access to consultants are taken into account.</p>
-            <div class="callout"><strong>Remember, we are independent...</strong> And we can therefore help you find the best plan for your particular needs. Interfinancial has access to the whole market and can offer a range of highly competitive individual and family plans to suit your requirements and your budget.</div>
-            <h3>Fast &amp; comfortable care</h3>
-            <p>Good health is important to us all and when illness does strike it is often unexpected. Although the NHS offers excellent service for emergency treatment, public demand means you may experience some delay, especially for non-urgent treatment.</p>
-            <p>With private medical insurance you will always have the comfort of knowing that, should you, or members of your family become ill, the condition can be treated quickly, by a specialist in a private hospital close to home, in comfortable surroundings.</p>
-            <h3>Accommodation in a private hospital</h3>
-            <p>Usually means your own room, almost always with a telephone, TV, radio and en-suite bathroom. You'll enjoy a choice of food and drink and, as there are normally no restrictions to visitors, you can keep in contact with your friends, family and business colleagues.</p>
+      </section>
+
+      <section class="panel bg-primary-100">
+        <div class="panel-pad wrap grid gap-10 lg:grid-cols-2 lg:gap-16">
+          <div class="rv">
+            <span class="eyebrow">Health &amp; Wellbeing</span>
+            <h2 class="h-lg mt-6"><span class="thin">Private</span> Medical Insurance</h2>
+            <p class="mt-6 text-lg text-primary-900/80">Private medical insurance is normally seen as a necessity by many people to ensure they get to choose when, where and with whom they are treated, rather than accept the vagaries of NHS care.</p>
+            <p class="mt-4 text-lg text-primary-900/80">Many ailments can be ‘nipped in the bud’ if promptly and effectively treated rather than causing longer recovery times if ignored or when waiting times for access to consultants are taken into account.</p>
+            <div class="mt-6 rounded-[2rem] bg-primary-950 p-7 text-white"><h3 class="display text-xl font-bold">Remember, we are independent...</h3><p class="mt-2 text-primary-200">And we can therefore help you find the best plan for your particular needs. Interfinancial has access to the whole market and can offer a range of highly competitive individual and family plans to suit your requirements and your budget.</p></div>
+          </div>
+          <div class="rv grid content-start gap-3" style="--d:1">
+            <div class="rounded-[2rem] bg-white p-7 md:p-9"><h3 class="display text-2xl font-bold">Fast &amp; Comfortable Care</h3>
+              <p class="mt-3 text-primary-900/80">Good health is important to us all and when illness does strike it is often unexpected. Although the NHS offers excellent service for emergency treatment, public demand means you may experience some delay, especially for non-urgent treatment.</p>
+              <p class="mt-3 text-primary-900/80">With private medical insurance you will always have the comfort of knowing that, should you, or members of your family become ill, the condition can be treated quickly, by a specialist in a private hospital close to home, in comfortable surroundings.</p></div>
+            <div class="rounded-[2rem] bg-white p-7 md:p-9"><h3 class="display text-2xl font-bold">Accommodation in a private hospital</h3>
+              <p class="mt-3 text-primary-900/80">Usually means your own room, almost always with a telephone, TV, radio and en-suite bathroom. You'll enjoy a choice of food and drink and, as there are normally no restrictions to visitors, you can keep in contact with your friends, family and business colleagues.</p></div>
           </div>
         </div>
-        <div class="band rv">
-          <div class="band-label"><span class="kicker">Income protection</span><h2>Keep your payments covered</h2></div>
-          <div class="prose">
-            <div class="pair">
-              <div class="tile"><h3>Why should you choose Mortgage Payment Protection?</h3><p>Mortgage payment protection covers your mortgage related payments whenever you find yourself unable to work for an extended period. This could be due to accident, sickness or simply losing your job.</p><p style="margin-top:.75rem">Expenses covered include mortgage payments, life insurance premiums, buildings and contents insurance premiums and payments on any endowment policies you may have.</p></div>
-              <div class="tile tile--dark"><h3>Why should you choose an Income Protection Policy?</h3><p>The benefit of choosing an income protection policy as an alternative is that it doesn't just cover your mortgage related expenses. This option will provide you with a replacement income to cover your general living expenses.</p></div>
-            </div>
-            <p>Contact Interfinancial in Shropshire for more helpful advice on your protection.</p>
-            <a href="#contact" class="inline-link" style="justify-self:start">Get Advice <svg class="icon"><use href="#i-arrow" /></svg></a>
+      </section>
+
+      <section class="panel bg-primary-950 text-white">
+        <div class="panel-pad wrap">
+          <div class="grid gap-3 md:grid-cols-2">
+            <div class="rv rounded-[2rem] bg-white/5 p-8 ring-1 ring-white/10 md:p-10"><h3 class="display text-2xl font-bold">Why should you choose Mortgage Payment Protection?</h3>
+              <p class="mt-4 text-primary-200">Mortgage payment protection covers your mortgage related payments whenever you find yourself unable to work for an extended period. This could be due to accident, sickness or simply losing your job.</p>
+              <p class="mt-3 text-primary-200">Expenses covered include mortgage payments, life insurance premiums, buildings and contents insurance premiums and payments on any endowment policies you may have.</p></div>
+            <div class="rv rounded-[2rem] bg-primary-600 p-8 md:p-10" style="--d:1"><h3 class="display text-2xl font-bold">Why should you choose an Income Protection Policy?</h3>
+              <p class="mt-4 text-primary-100">The benefit of choosing an income protection policy as an alternative is that it doesn't just cover your mortgage related expenses. This option will provide you with a replacement income to cover your general living expenses.</p></div>
+          </div>
+          <div class="rv mt-10 flex flex-col items-start justify-between gap-5 md:flex-row md:items-center">
+            <p class="max-w-xl text-lg text-primary-100">Contact Interfinancial in Shropshire for more helpful advice on your protection.</p>
+            <a href="#contact" class="btn btn-light"><span>Get Advice</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
           </div>
         </div>
-      </div></section>
+      </section>
     </div>
 
     <!-- ===================== CONTACT ===================== -->
     <div class="page" id="page-contact" hidden>
-      <section class="page-hero">
-        <div class="wrap">
-          <span class="kicker">Get in touch</span>
-          <h1>Interfinancial <em class="accent">Mortgage &amp; Insurance Brokers</em></h1>
-          <p class="lead">Get in touch today to speak to mortgage and insurance brokers that always put you first. Don't delay in getting the best mortgage advice and insurance advice for you and your family. We cover Shropshire, Staffordshire, Cheshire and the rest of the UK.</p>
+      <section class="panel flex min-h-[70svh] flex-col justify-end bg-night text-white">
+        <img src="img/advisor.avif" width="1200" height="900" alt="Adviser celebrating with clients" class="absolute inset-0 size-full object-cover" />
+        <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
+        <div class="panel-pad wrap relative pt-36">
+          <span class="eyebrow rv">Get in Touch</span>
+          <h1 class="h-xl rv mt-6 max-w-[14ch]"><span class="thin">Interfinancial</span> Mortgage &amp; Insurance Brokers</h1>
+          <p class="rv mt-6 max-w-3xl text-lg text-white/90">Get in touch today to speak to mortgage and insurance brokers that always put you first. Don't delay in getting the best mortgage advice and insurance advice for you and your family. We cover Shropshire, Staffordshire, Cheshire and the rest of the UK.</p>
         </div>
       </section>
 
-      <section class="section section--tight"><div class="wrap contact-grid">
-        <form class="form rv" action="https://formsubmit.co/info@interfinancial.co.uk" method="POST">
-          <div>
-            <h2 style="font-size:clamp(1.75rem,3vw,2.4rem)">Send us a message</h2>
-            <p class="muted" style="margin-top:.6rem">Fill out our contact form below and we'll get back to you shortly.</p>
-          </div>
-          <input type="hidden" name="_subject" value="New Contact Form Submission from Website" />
-          <div class="two">
-            <div class="field"><label for="f-first">First Name</label><input id="f-first" type="text" name="First Name" required placeholder="John" autocomplete="given-name" /></div>
-            <div class="field"><label for="f-last">Last Name</label><input id="f-last" type="text" name="Last Name" required placeholder="Doe" autocomplete="family-name" /></div>
-          </div>
-          <div class="field"><label for="f-email">Email Address</label><input id="f-email" type="email" name="Email" required placeholder="john@example.com" autocomplete="email" /></div>
-          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="Phone" placeholder="01234 567890" autocomplete="tel" /></div>
-          <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="Message" rows="4" required placeholder="How can we help you?"></textarea></div>
-          <button class="btn" type="submit">Send Message <svg class="icon"><use href="#i-arrow" /></svg></button>
-        </form>
+      <section class="panel bg-paper">
+        <div class="panel-pad wrap grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <form class="rv grid gap-5" action="https://formsubmit.co/info@interfinancial.co.uk" method="POST">
+            <div><h2 class="h-md">Send us a message</h2><p class="mt-3 text-primary-900/80">Fill out our contact form below and we'll get back to you shortly.</p></div>
+            <input type="hidden" name="_subject" value="New Contact Form Submission from Website" />
+            <div class="grid gap-5 sm:grid-cols-2">
+              <div class="field"><label for="f-first">First Name</label><input id="f-first" type="text" name="First Name" required placeholder="John" autocomplete="given-name" /></div>
+              <div class="field"><label for="f-last">Last Name</label><input id="f-last" type="text" name="Last Name" required placeholder="Doe" autocomplete="family-name" /></div>
+            </div>
+            <div class="field"><label for="f-email">Email Address</label><input id="f-email" type="email" name="Email" required placeholder="john@example.com" autocomplete="email" /></div>
+            <div class="field"><label for="f-phone">Phone</label><input id="f-phone" type="tel" name="Phone" placeholder="01234 567890" autocomplete="tel" /></div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="Message" rows="4" required placeholder="How can we help you?"></textarea></div>
+            <button type="submit" class="btn w-fit cursor-pointer"><span>Send Message</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></button>
+          </form>
 
-        <div class="contact-list rv">
-          <div class="contact-item"><span class="ico"><svg class="icon"><use href="#i-phone" /></svg></span><div><h3>Call us today</h3><a href="tel:01630642868">01630 642868</a><a href="tel:07879643246">07879 643246</a></div></div>
-          <div class="contact-item"><span class="ico"><svg class="icon"><use href="#i-mail" /></svg></span><div><h3>Email us</h3><a href="mailto:info@interfinancial.co.uk">info@interfinancial.co.uk</a></div></div>
-          <div class="contact-item"><span class="ico"><svg class="icon"><use href="#i-pin" /></svg></span><div><h3>Visit us</h3><p>Interfinancial, The Brookhouse,<br />Smithy Lane, Market Drayton,<br />Shropshire, TF9 4HP</p></div></div>
-          <div class="person">
-            <img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick" />
-            <div><span class="kicker" style="color:var(--p-300)">Experienced advice</span><p style="margin-top:.4rem"><strong>Paul Fenwick</strong> - Director of Interfinancial Mortgage and General Insurance Brokers. Celebrating over 30 Years Experience and Service within the Financial Services Industry.</p></div>
+          <div class="rv grid content-start gap-4" style="--d:1">
+            <h2 class="h-md">Get in touch</h2>
+            <div class="flex gap-4 rounded-[2rem] bg-white p-6"><span class="grid size-12 shrink-0 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon"><use href="#i-phone" /></svg></span>
+              <div><h3 class="text-lg font-bold">Call Us Today</h3><a class="block font-medium hover:text-primary-600" href="tel:01630642868">01630 642868</a><a class="block font-medium hover:text-primary-600" href="tel:07879643246">07879 643246</a></div></div>
+            <div class="flex gap-4 rounded-[2rem] bg-white p-6"><span class="grid size-12 shrink-0 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon"><use href="#i-mail" /></svg></span>
+              <div><h3 class="text-lg font-bold">Email Us</h3><a class="block font-medium break-all hover:text-primary-600" href="mailto:info@interfinancial.co.uk">info@interfinancial.co.uk</a></div></div>
+            <div class="flex gap-4 rounded-[2rem] bg-white p-6"><span class="grid size-12 shrink-0 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon"><use href="#i-pin" /></svg></span>
+              <div><h3 class="text-lg font-bold">Visit Us</h3><p>Interfinancial, The Brookhouse,<br />Smithy Lane,<br />Market Drayton,<br />Shropshire, TF9 4HP</p></div></div>
+            <div class="flex items-center gap-5 rounded-[2rem] bg-primary-950 p-5 text-white">
+              <img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick" class="h-28 w-24 shrink-0 rounded-2xl object-cover object-top" />
+              <div><h3 class="text-sm font-bold tracking-wider text-primary-300 uppercase">Experienced Advice</h3>
+                <p class="mt-1 text-sm text-primary-100"><strong class="text-white">Paul Fenwick</strong> - Director of Interfinancial Mortgage and General Insurance Brokers. Celebrating over 30 Years Experience and Service within the Financial Services Industry.</p></div>
+            </div>
+            <p class="text-sm text-primary-900/70">Authorised and Regulated by the Financial Conduct Authority ref:195920</p>
           </div>
-          <p class="muted" style="font-size:.9rem">Authorised and Regulated by the Financial Conduct Authority ref:195920</p>
         </div>
-      </div></section>
+      </section>
 
-      <section class="section section--white"><div class="wrap">
-        <div class="section-head section-head--split rv">
-          <h2>Our business partners</h2>
-          <p class="lead">We work with trusted professionals to provide you with a comprehensive service.</p>
+      <section class="panel bg-primary-100">
+        <div class="panel-pad wrap">
+          <div class="rv flex flex-col justify-between gap-5 md:flex-row md:items-end">
+            <h2 class="h-lg"><span class="thin">Our Business</span> Partners</h2>
+            <p class="max-w-md text-primary-900/80">We work with trusted professionals to provide you with a comprehensive service.</p>
+          </div>
+          <div class="mt-12 grid gap-3 md:grid-cols-3">
+            <div class="rv rounded-[2rem] bg-white p-7"><h3 class="display text-xl font-bold">Aaron James Consultancy Limited</h3><p class="mt-3 text-primary-900/80">Provides all of your accountancy needs.</p><p class="mt-5 font-bold">Rajendra Mugunthan<br />07976 828879</p></div>
+            <div class="rv rounded-[2rem] bg-white p-7" style="--d:1"><h3 class="display text-xl font-bold">Ackroyd Legal</h3><p class="mt-3 text-primary-900/80">Whether you are considering to a buy a new home buy to let investment property or simply a remortgage, Ackroyd Legal caters for all your conveyancing and legal needs.</p><p class="mt-5 font-bold">Kumaran Moorthy<br />07796 030606</p></div>
+            <div class="rv rounded-[2rem] bg-white p-7" style="--d:2"><h3 class="display text-xl font-bold">Sterling &amp; Law</h3><p class="mt-3 text-primary-900/80">Established in 1997, a firm of professional independent financial consultants based in London offering advice on pensions and investments. Discounts are available to Interfinancial Clients.</p><p class="mt-5 font-bold">Lawrence Sanderson<br />07525 435315</p></div>
+          </div>
         </div>
-        <div class="partners">
-          <div class="tile partner rv"><h3>Aaron James Consultancy Limited</h3><p>Provides all of your accountancy needs.</p><p class="num">Rajendra Mugunthan<br />07976 828879</p></div>
-          <div class="tile partner rv"><h3>Ackroyd Legal</h3><p>Whether you are considering to a buy a new home buy to let investment property or simply a remortgage, Ackroyd Legal caters for all your conveyancing and legal needs.</p><p class="num">Kumaran Moorthy<br />07796 030606</p></div>
-          <div class="tile partner rv"><h3>Sterling &amp; Law</h3><p>Established in 1997, a firm of professional independent financial consultants based in London offering advice on pensions and investments. Discounts are available to Interfinancial Clients.</p><p class="num">Lawrence Sanderson<br />07525 435315</p></div>
-        </div>
-      </div></section>
+      </section>
     </div>
 
-    <!-- shared closing CTA (hidden on contact page) -->
-    <section class="section section--tight" id="cta-band">
-      <div class="wrap">
-        <div class="cta rv">
-          <h2>Ready to secure your mortgage?</h2>
-          <p>Book a free, no-obligation consultation with one of our expert brokers today and take the first step towards your property goals.</p>
-          <div class="actions">
-            <a href="#contact" class="btn btn--light">Book Free Consultation <svg class="icon"><use href="#i-arrow" /></svg></a>
-            <a href="tel:01630642868" class="phone">01630 642868</a>
-          </div>
+    <!-- shared closing CTA -->
+    <section id="cta-band" class="panel bg-primary-600 text-white">
+      <div class="absolute -top-40 -right-32 size-[34rem] rounded-full bg-primary-500/60"></div>
+      <div class="panel-pad wrap relative grid items-end gap-10 lg:grid-cols-[1.3fr_0.7fr]">
+        <div class="rv">
+          <h2 class="h-xl"><span class="thin">Ready to</span> Secure Your Mortgage?</h2>
+          <p class="mt-6 max-w-xl text-lg text-primary-100">Book a free, no-obligation consultation with one of our expert brokers today and take the first step towards your property goals.</p>
+        </div>
+        <div class="rv flex flex-col items-start gap-5 lg:items-end" style="--d:1">
+          <a href="#contact" class="btn btn-light"><span>Book Free Consultation</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+          <a href="tel:08001234567" class="font-display text-3xl font-bold">0800 123 4567</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-grid">
-        <div>
-          <img src="img/logo-full.avif" width="360" height="339" loading="lazy" alt="Interfinancial Mortgage Solutions" />
-          <p>Independent mortgage advice in Shropshire, Cheshire and Staffordshire.</p>
-        </div>
-        <div>
-          <h4>Services</h4>
-          <ul>
-            <li><a href="#mortgage-remortgages">First Time Buyers</a></li>
-            <li><a href="#mortgage-remortgages">Remortgages</a></li>
-            <li><a href="#secured-loans">Buy to Let</a></li>
-            <li><a href="#insurance-protection">Protection Advice</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#contact">Careers</a></li>
-            <li><a href="#contact">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Contact</h4>
-          <p>The Brookhouse, Smithy Lane, Market Drayton<br />Shropshire, TF9 4HP</p>
-          <p style="margin-top:.75rem">Authorised &amp; Regulated by the FCA: 195920</p>
-        </div>
+  <footer class="panel bg-primary-950 text-primary-200">
+    <div class="overflow-hidden border-b border-white/10 py-6" aria-hidden="true">
+      <div class="marquee font-display text-[clamp(4.5rem,13vw,11rem)] leading-none font-bold text-primary-900 uppercase">
+        <span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span><span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span>
+        <span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span><span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span>
       </div>
-      <div class="legal">
-        <p><strong>Important:</strong> As a mortgage is secured against your home, it may be repossessed if you do not keep up repayments on your mortgage. Some types of buy to let mortgages are not regulated by the Financial Conduct Authority.</p>
+    </div>
+    <div class="panel-pad wrap !pt-14">
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+        <div>
+          <img src="img/logo-full.avif" width="360" height="338" loading="lazy" alt="Interfinancial Mortgage Solutions" class="h-24 w-auto rounded-2xl bg-white p-2" />
+          <p class="mt-5 max-w-xs">Independent mortgage advice in Shropshire, Cheshire and Staffordshire.</p>
+        </div>
+        <div><h4 class="display text-sm font-bold tracking-widest text-white">Services</h4>
+          <ul class="mt-4 grid gap-2">
+            <li><a class="transition-colors hover:text-white" href="#mortgage-remortgages">First Time Buyers</a></li>
+            <li><a class="transition-colors hover:text-white" href="#mortgage-remortgages">Remortgages</a></li>
+            <li><a class="transition-colors hover:text-white" href="#secured-loans">Buy to Let</a></li>
+            <li><a class="transition-colors hover:text-white" href="#insurance-protection">Protection Advice</a></li>
+          </ul></div>
+        <div><h4 class="display text-sm font-bold tracking-widest text-white">Company</h4>
+          <ul class="mt-4 grid gap-2">
+            <li><a class="transition-colors hover:text-white" href="#about">About Us</a></li>
+            <li><a class="transition-colors hover:text-white" href="#contact">Contact</a></li>
+            <li><a class="transition-colors hover:text-white" href="#contact">Careers</a></li>
+            <li><a class="transition-colors hover:text-white" href="#contact">Privacy Policy</a></li>
+          </ul></div>
+        <div><h4 class="display text-sm font-bold tracking-widest text-white">Contact</h4>
+          <p class="mt-4">The Brookhouse, Smithy Lane, Market Drayton<br />Shropshire, TF9 4HP</p>
+          <p class="mt-3">Authorised &amp; Regulated by the FCA: 195920</p></div>
+      </div>
+      <div class="mt-12 grid gap-3 border-t border-white/10 pt-6 text-sm text-primary-300">
+        <p><strong class="text-white">Important:</strong> As a mortgage is secured against your home, it may be repossessed if you do not keep up repayments on your mortgage. Some types of buy to let mortgages are not regulated by the Financial Conduct Authority.</p>
         <p>&copy; 2026 Interfinancial. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- calculator partial, cloned into every [data-slot="calculator"] -->
+  <!-- calculator partial -->
   <template id="calculator-tpl">
-    <div class="calc rv" id="calculator">
-      <div>
-        <span class="kicker">Mortgage calculator</span>
-        <h2 style="margin-top:1rem">Estimate your monthly repayments</h2>
-        <p class="lead">Use our quick calculator to understand what a mortgage might cost you each month. This is an estimate based on a repayment mortgage.</p>
-        <ul class="ticks">
-          <li><svg class="icon"><use href="#i-check" /></svg>Adjust inputs to see live updates</li>
-          <li><svg class="icon"><use href="#i-check" /></svg>Helps plan your budget effectively</li>
-          <li><svg class="icon"><use href="#i-check" /></svg>Compare different interest rates</li>
-        </ul>
-      </div>
-      <div class="calc-form">
-        <div class="field"><label>Property Price (£)</label><input type="number" inputmode="numeric" data-calc="price" value="250000" min="0" step="1000" /></div>
-        <div class="field"><label>Deposit Amount (£)</label><input type="number" inputmode="numeric" data-calc="deposit" value="25000" min="0" step="1000" /></div>
-        <div class="field"><label>Interest Rate (%)</label><input type="number" inputmode="decimal" data-calc="rate" value="4.5" min="0" step="0.1" /></div>
-        <div class="field"><label>Term (Years)</label><input type="number" inputmode="numeric" data-calc="term" value="25" min="1" max="40" /></div>
-        <div class="result" aria-live="polite">
-          <div class="row">
-            <div><small>Estimated monthly</small><span class="big" data-out="monthly">£1,251</span></div>
-            <div><small>Total loan amount</small><span class="loan" data-out="loan">£225,000</span></div>
+    <section id="calculator" class="calc panel bg-paper">
+      <div class="panel-pad wrap grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div class="rv">
+          <h2 class="h-lg"><span class="thin">Estimate your</span> monthly repayments</h2>
+          <p class="mt-6 max-w-xl text-lg text-primary-900/80">Use our quick calculator to understand what a mortgage might cost you each month. This is an estimate based on a repayment mortgage.</p>
+          <ul class="mt-5 grid gap-2 text-primary-900/80">
+            <li class="flex items-center gap-3"><span class="grid size-6 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon !size-3.5"><use href="#i-check" /></svg></span>Adjust inputs to see live updates</li>
+            <li class="flex items-center gap-3"><span class="grid size-6 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon !size-3.5"><use href="#i-check" /></svg></span>Helps plan your budget effectively</li>
+            <li class="flex items-center gap-3"><span class="grid size-6 place-items-center rounded-full bg-primary-600 text-white"><svg class="icon !size-3.5"><use href="#i-check" /></svg></span>Compare different interest rates</li>
+          </ul>
+          <div class="mt-9 grid gap-4 sm:grid-cols-2">
+            <div class="field"><label>Property Price (£)</label><input type="number" inputmode="numeric" data-calc="price" value="250000" min="0" step="1000" /></div>
+            <div class="field"><label>Deposit Amount (£)</label><input type="number" inputmode="numeric" data-calc="deposit" value="25000" min="0" step="1000" /></div>
+            <div class="field"><label>Interest Rate (%)</label><input type="number" inputmode="decimal" data-calc="rate" value="4.5" min="0" step="0.1" /></div>
+            <div class="field"><label>Term (Years)</label><input type="number" inputmode="numeric" data-calc="term" value="25" min="1" max="40" /></div>
           </div>
-          <a href="#contact" class="btn">Get an Exact Quote <svg class="icon"><use href="#i-arrow" /></svg></a>
         </div>
-        <p class="fineprint">*This calculator provides an estimate only. Actual rates vary.</p>
+        <div class="rv relative" style="--d:1">
+          <div class="notch aspect-[4/5] overflow-hidden rounded-[2rem] lg:aspect-[3/4]"><img src="img/hero-keys.avif" width="900" height="1100" loading="lazy" alt="Model house with keys" class="size-full object-cover" /></div>
+          <div class="absolute inset-x-4 bottom-4 rounded-[1.5rem] bg-primary-950 p-6 text-white md:inset-x-6 md:bottom-6" aria-live="polite">
+            <div class="flex items-end justify-between gap-4">
+              <div><p class="text-xs font-semibold tracking-wider text-primary-300 uppercase">Estimated Monthly</p><p data-out="monthly" class="font-display text-5xl leading-none font-bold tabular-nums">£1,251</p></div>
+              <div class="text-right"><p class="text-xs font-semibold tracking-wider text-primary-300 uppercase">Total Loan amount:</p><p data-out="loan" class="font-display text-xl font-bold tabular-nums">£225,000</p></div>
+            </div>
+            <a href="#contact" class="btn btn-light mt-5 w-full justify-between"><span>Get a Exact Quote</span><span class="btn-dot"><svg class="icon"><use href="#i-arrow" /></svg></span></a>
+            <p class="mt-3 text-xs text-primary-300">*This calculator provides an estimate only. Actual rates vary.</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </template>
 
-  <script type="module" src="/src/main.ts"></script>
+  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>
