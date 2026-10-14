@@ -14,7 +14,11 @@
 </head>
 
 <body>
-  <div class="backdrop" aria-hidden="true"></div>
+  <svg id="bezel" aria-hidden="true">
+    <defs><pattern id="bz" patternUnits="userSpaceOnUse" x="0" y="0" width="1440" height="900"><image href="/img/bezel.avif" x="0" y="0" width="1440" height="900" preserveAspectRatio="xMidYMid slice" /></pattern></defs>
+    <path id="bz-img" fill="url(#bz)" fill-rule="evenodd" />
+    <path id="bz-shade" fill="rgba(10,18,48,0.55)" fill-rule="evenodd" />
+  </svg>
 
   <!-- icon sprite -->
   <svg width="0" height="0" class="absolute" aria-hidden="true">
@@ -49,7 +53,7 @@
   <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-full focus:bg-white focus:px-4 focus:py-2">Skip to content</a>
 
   <!-- floating nav -->
-  <header id="nav" class="fixed inset-x-5 top-5 z-50 mx-auto max-w-[1280px] rounded-full bg-white/90 backdrop-blur-md transition-shadow duration-300 md:inset-x-9">
+  <header id="nav" class="fixed inset-x-4 top-4 z-[70] mx-auto max-w-[1280px] md:inset-x-[max(28px,calc(2.6vw+16px))] md:top-[max(22px,calc(1.4vw+12px))] rounded-full bg-white/90 backdrop-blur-md transition-shadow duration-300 md:inset-x-9">
     <div class="flex items-center justify-between gap-4 py-2 pr-2 pl-5">
       <a href="#home" class="flex items-center gap-2.5" aria-label="Interfinancial home">
         <img src="img/crest.avif" width="40" height="40" alt="" class="size-10" />
@@ -83,12 +87,12 @@
     <div class="page" id="page-home">
 
       <!-- hero -->
-      <section class="panel flex min-h-[calc(100svh-1.5rem)] flex-col justify-end bg-night text-white md:min-h-[calc(100svh-2.5rem)]">
+      <section class="panel flex min-h-svh flex-col justify-end bg-night text-white">
         <img data-drift src="img/hero-couple.avif" width="1920" height="1100" alt="Couple cooking together in their kitchen" fetchpriority="high" class="absolute inset-0 size-full scale-[1.08] object-cover will-change-transform" />
         <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/40"></div>
         <div class="panel-pad wrap relative !pt-28 !pb-10 md:!pb-14">
           <span class="eyebrow hero-in" style="--i:0">FCA Regulated Independent Brokers</span>
-          <h1 class="h-xl mt-5 max-w-[16ch]" aria-label="Interfinancial Can Help With All Your Mortgage Needs">
+          <h1 data-hero class="h-xl mt-5" aria-label="Interfinancial Can Help With All Your Mortgage Needs">
             <span class="line"><span style="--i:0">Interfinancial</span></span>
             <span class="line"><span style="--i:1">Can Help With
               <a href="#calculator" aria-label="Calculate mortgage" class="ml-2 inline-flex translate-y-[-0.08em] items-center gap-1 rounded-full bg-white/90 p-1.5 align-middle">
@@ -97,7 +101,7 @@
                 <span class="grid size-[0.5em] min-h-9 min-w-9 place-items-center rounded-full bg-primary-500 text-white"><svg class="icon !size-5"><use href="#i-arrow" /></svg></span>
               </a></span></span>
             <span class="line md:pl-[10vw]"><span class="thin" style="--i:2">All Your</span></span>
-            <span class="line md:pl-[4vw]"><span style="--i:3">Mortgage Needs</span></span>
+            <span class="line md:pl-[4vw]"><span style="--i:3"><span data-type>Mortgage Needs</span></span></span>
           </h1>
 
           <div class="mt-8 grid items-end gap-8 lg:grid-cols-[1fr_auto]">
@@ -136,7 +140,7 @@
           <div class="rv">
             <h2 class="h-lg"><span class="thin">Why</span><br />Choose Us?</h2>
             <p class="mt-5 max-w-md text-primary-100">We pride ourselves on offering independent, unbiased advice that puts your needs first.</p>
-            <div class="notch mt-10 aspect-[5/4] overflow-hidden rounded-[2rem]"><img src="img/family.avif" width="900" height="1000" loading="lazy" alt="Family outside their home" class="size-full object-cover" /></div>
+            <div class="img-rv notch mt-10 aspect-[5/4] overflow-hidden rounded-[2rem]"><img src="img/family.avif" width="900" height="1000" loading="lazy" alt="Family outside their home" class="size-full object-cover" /></div>
           </div>
           <div class="grid content-center gap-3">
             <div class="rv rounded-3xl bg-white/10 p-6 md:p-8" style="--d:0"><h3 class="display text-2xl"><span class="thin">Expert</span> Knowledge</h3><p class="mt-2 text-primary-100">Exclusive broker access to 10,000+ mortgage products and the best rates through advanced technology.</p></div>
@@ -193,12 +197,12 @@
       </section>
 
       <!-- about: full-bleed photo panel with staggered statement -->
-      <section id="about" class="panel bg-night text-white">
+      <section id="about" data-expand class="panel flex min-h-[120svh] flex-col justify-center bg-night text-white">
         <img src="img/night-house.avif" width="1800" height="1000" loading="lazy" alt="" class="absolute inset-0 size-full object-cover opacity-70" />
         <div class="absolute inset-0 bg-linear-to-b from-night/60 to-night/90"></div>
         <div class="panel-pad wrap relative">
           <span class="eyebrow rv">About Us</span>
-          <h2 class="h-xl rv mt-6 max-w-[14ch]"><span class="thin">Expert Advice</span> Built on <span class="block md:pl-[12vw]">Trust &amp; Transparency</span></h2>
+          <h2 class="h-xl mt-6 md:whitespace-nowrap md:!text-[min(4.4vw,8svh)]"><span class="block" data-slide="-1"><span class="thin">Expert Advice</span> Built on</span><span class="block md:pl-[6vw]" data-slide="1">Trust &amp; Transparency</span></h2>
           <div class="mt-14 grid gap-8 lg:grid-cols-2">
             <p class="rv text-lg text-white/85">At Interfinancial we strive to find simple solutions to complicated matters for you, such as mortgages and insurance. Our friendly and approachable team are experienced in offering independent mortgage advice that will help guide you towards making the right decision.</p>
             <p class="rv text-lg text-white/85" style="--d:1">We are proud to not be tied to any high street bank or building society. This allows us to always offer you totally independent advice when you speak to us. If you are in Market Drayton, Telford, Shrewsbury, Stafford, Stoke-on-Trent, Nantwich or Chester, you won't find better expertise anywhere else.</p>
@@ -214,29 +218,29 @@
 
       <div data-slot="calculator"></div>
 
-      <!-- process -->
-      <section id="process" class="panel bg-primary-950 text-white">
-        <div class="panel-pad wrap">
-          <div class="rv flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <h2 class="h-lg"><span class="thin">Our Simple</span> Process</h2>
-            <p class="max-w-md text-primary-200">We take the stress out of securing a mortgage by managing the heavy lifting for you.</p>
-          </div>
-          <div class="-mx-6 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-4 md:overflow-visible md:px-0">
-            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:0">
-              <img src="img/card-modern.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
-              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">01</p><h3 class="display mt-3 text-xl font-bold">Initial Consultation</h3><p class="mt-2 text-sm text-primary-200">A quick chat to understand your goals, financial situation, and what you are looking for.</p></div>
+      <!-- process: pinned, cards drift horizontally on scroll (md+) -->
+      <section id="process" data-hscroll class="panel bg-primary-950 text-white">
+        <div class="hs-pin">
+          <div class="hs-track flex snap-x snap-mandatory items-start gap-5 overflow-x-auto px-6 py-20 md:snap-none md:gap-10 md:overflow-visible md:px-[8vw] md:py-0">
+            <div class="rv w-[85%] shrink-0 md:w-[26rem] md:self-center">
+              <h2 class="h-lg"><span class="thin">Our Simple</span> Process</h2>
+              <p class="mt-6 text-lg text-primary-200">We take the stress out of securing a mortgage by managing the heavy lifting for you.</p>
+            </div>
+            <article class="rv w-[78%] shrink-0 snap-start md:w-[22rem] md:mt-[26svh]" style="--d:0">
+              <div class="overflow-hidden rounded-[1.75rem]"><img src="img/card-modern.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" /></div>
+              <div class="mt-5 grid grid-cols-[auto_1fr] gap-4"><p class="display text-4xl font-extrabold text-primary-400">01</p><div><h3 class="display text-lg font-bold">Initial Consultation</h3><p class="mt-2 text-sm text-primary-200">A quick chat to understand your goals, financial situation, and what you are looking for.</p></div></div>
             </article>
-            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:1">
-              <img src="img/card-farm.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
-              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">02</p><h3 class="display mt-3 text-xl font-bold">Find Best Deal</h3><p class="mt-2 text-sm text-primary-200">We scan the whole market to find the mortgage that perfectly suits your requirements.</p></div>
+            <article class="rv w-[78%] shrink-0 snap-start md:w-[22rem] md:mt-[4svh]" style="--d:1">
+              <div class="overflow-hidden rounded-[1.75rem]"><img src="img/card-farm.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" /></div>
+              <div class="mt-5 grid grid-cols-[auto_1fr] gap-4"><p class="display text-4xl font-extrabold text-primary-400">02</p><div><h3 class="display text-lg font-bold">Find Best Deal</h3><p class="mt-2 text-sm text-primary-200">We scan the whole market to find the mortgage that perfectly suits your requirements.</p></div></div>
             </article>
-            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:2">
-              <img src="img/card-contemporary.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
-              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">03</p><h3 class="display mt-3 text-xl font-bold">Application</h3><p class="mt-2 text-sm text-primary-200">We handle all the paperwork and liaise with lenders, estate agents, and solicitors.</p></div>
+            <article class="rv w-[78%] shrink-0 snap-start md:w-[22rem] md:mt-[32svh]" style="--d:2">
+              <div class="overflow-hidden rounded-[1.75rem]"><img src="img/card-contemporary.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" /></div>
+              <div class="mt-5 grid grid-cols-[auto_1fr] gap-4"><p class="display text-4xl font-extrabold text-primary-400">03</p><div><h3 class="display text-lg font-bold">Application</h3><p class="mt-2 text-sm text-primary-200">We handle all the paperwork and liaise with lenders, estate agents, and solicitors.</p></div></div>
             </article>
-            <article class="rv w-[78%] shrink-0 snap-start overflow-hidden rounded-[2rem] bg-white/5 ring-1 ring-white/10 md:w-auto" style="--d:3">
-              <img src="img/card-interior.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" />
-              <div class="p-6"><p class="font-display text-5xl font-bold text-primary-400">04</p><h3 class="display mt-3 text-xl font-bold">Completion</h3><p class="mt-2 text-sm text-primary-200">We monitor progress up to the day you get your keys, keeping you updated constantly.</p></div>
+            <article class="rv w-[78%] shrink-0 snap-start md:w-[22rem] md:mt-[12svh] md:mr-[8vw]" style="--d:3">
+              <div class="overflow-hidden rounded-[1.75rem]"><img src="img/card-interior.avif" width="700" height="520" loading="lazy" alt="" class="aspect-[4/3] w-full object-cover" /></div>
+              <div class="mt-5 grid grid-cols-[auto_1fr] gap-4"><p class="display text-4xl font-extrabold text-primary-400">04</p><div><h3 class="display text-lg font-bold">Completion</h3><p class="mt-2 text-sm text-primary-200">We monitor progress up to the day you get your keys, keeping you updated constantly.</p></div></div>
             </article>
           </div>
         </div>
@@ -249,7 +253,7 @@
         <img src="img/house-plans.avif" width="1100" height="820" alt="House model on architectural plans" class="absolute inset-0 size-full object-cover" />
         <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/55 to-night/30"></div>
         <div class="panel-pad wrap relative pt-36">
-          <h1 class="h-xl rv max-w-[12ch]"><span class="thin">Mortgage /</span> Remortgages</h1>
+          <h1 class="h-xl rv max-w-5xl"><span class="thin">Mortgage /</span> Remortgages</h1>
           <p class="rv mt-6 max-w-xl text-xl text-white/90">We are a trusted choice to help you find the mortgage or remortgage product you require today.</p>
         </div>
       </section>
@@ -268,7 +272,7 @@
 
       <section class="panel bg-primary-600 text-white">
         <div class="panel-pad wrap grid items-center gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-          <div class="rv notch aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem]"><img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick" class="size-full object-cover object-top" /></div>
+          <div class="img-rv notch aspect-[4/5] max-w-sm overflow-hidden rounded-[2rem]"><img src="/img/paul.avif" width="305" height="384" loading="lazy" alt="Paul Fenwick" class="size-full object-cover object-top" /></div>
           <div class="rv">
             <h2 class="h-lg"><span class="thin">My Areas of</span> Expertise</h2>
             <p class="mt-6 max-w-2xl text-lg text-primary-100">I've always worked hard towards making sure my clients receive the best mortgage services for all their property financing needs. Working with Interfinancial means having my personal support for a variety of services as well as the knowledge and resources that come with years of experience in the mortgage industry.</p>
@@ -334,7 +338,7 @@
         <img src="img/pool-hero.avif" width="1800" height="1000" alt="Modern home with swimming pool" class="absolute inset-0 size-full object-cover" />
         <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
         <div class="panel-pad wrap relative pt-36">
-          <h1 class="h-xl rv max-w-[15ch]"><span class="thin">Secured Loans in</span> Market Drayton, Shrewsbury and Telford</h1>
+          <h1 class="h-xl rv max-w-5xl"><span class="thin">Secured Loans in</span> Market Drayton, Shrewsbury and Telford</h1>
           <p class="rv mt-6 max-w-3xl text-lg text-white/90">A secured loan otherwise known as a 'Second Charge Loan' is a second mortgage against your residential or buy to let investment property. This ranks behind your main mortgage and allows you to use some equity value you have in the property as security for another loan.</p>
         </div>
       </section>
@@ -401,7 +405,7 @@
         <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
         <div class="panel-pad wrap relative pt-36">
           <span class="eyebrow rv">Protection &amp; Insurance</span>
-          <h1 class="h-xl rv mt-6 max-w-[16ch]"><span class="thin">Life Insurance in</span> Shrewsbury, Telford and Throughout Shropshire</h1>
+          <h1 class="h-xl rv mt-6 max-w-5xl"><span class="thin">Life Insurance in</span> Shrewsbury, Telford and Throughout Shropshire</h1>
           <p class="rv mt-6 max-w-2xl text-xl text-white/90">Providing financial protection for your loved ones against the financial outcomes of an unexpected death, illness or injury.</p>
         </div>
       </section>
@@ -489,7 +493,7 @@
         <div class="absolute inset-0 bg-linear-to-t from-night/95 via-night/60 to-night/35"></div>
         <div class="panel-pad wrap relative pt-36">
           <span class="eyebrow rv">Get in Touch</span>
-          <h1 class="h-xl rv mt-6 max-w-[14ch]"><span class="thin">Interfinancial</span> Mortgage &amp; Insurance Brokers</h1>
+          <h1 class="h-xl rv mt-6 max-w-5xl"><span class="thin">Interfinancial</span> Mortgage &amp; Insurance Brokers</h1>
           <p class="rv mt-6 max-w-3xl text-lg text-white/90">Get in touch today to speak to mortgage and insurance brokers that always put you first. Don't delay in getting the best mortgage advice and insurance advice for you and your family. We cover Shropshire, Staffordshire, Cheshire and the rest of the UK.</p>
         </div>
       </section>
@@ -558,39 +562,36 @@
     </section>
   </main>
 
-  <footer class="panel bg-primary-950 text-primary-200">
-    <div class="overflow-hidden border-b border-white/10 py-6" aria-hidden="true">
-      <div class="marquee font-display text-[clamp(4.5rem,13vw,11rem)] leading-none font-bold text-primary-900 uppercase">
-        <span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span><span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span>
-        <span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span><span class="px-8">Interfinancial</span><span class="px-8 font-light text-primary-600">Interfinancial</span>
-      </div>
+  <footer class="relative -mt-10 overflow-clip rounded-t-[2.5rem] bg-primary-200 text-primary-950">
+    <div class="overflow-clip pt-14 md:pt-20" aria-hidden="true">
+      <p id="wordmark" class="display w-max px-4 leading-[0.8] font-extrabold whitespace-nowrap will-change-transform">Interfinancial</p>
     </div>
     <div class="panel-pad wrap !pt-14">
-      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
+      <div class="grid gap-10 border-t border-primary-950/15 pt-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">
         <div>
           <img src="img/logo-full.avif" width="360" height="338" loading="lazy" alt="Interfinancial Mortgage Solutions" class="h-24 w-auto rounded-2xl bg-white p-2" />
-          <p class="mt-5 max-w-xs">Independent mortgage advice in Shropshire, Cheshire and Staffordshire.</p>
+          <p class="mt-5 max-w-xs text-primary-900">Independent mortgage advice in Shropshire, Cheshire and Staffordshire.</p>
         </div>
-        <div><h4 class="display text-sm font-bold tracking-widest text-white">Services</h4>
-          <ul class="mt-4 grid gap-2">
-            <li><a class="transition-colors hover:text-white" href="#mortgage-remortgages">First Time Buyers</a></li>
-            <li><a class="transition-colors hover:text-white" href="#mortgage-remortgages">Remortgages</a></li>
-            <li><a class="transition-colors hover:text-white" href="#secured-loans">Buy to Let</a></li>
-            <li><a class="transition-colors hover:text-white" href="#insurance-protection">Protection Advice</a></li>
+        <div><h4 class="display text-sm font-bold tracking-widest">Services</h4>
+          <ul class="mt-4 grid gap-2 text-primary-900">
+            <li><a class="transition-colors hover:text-primary-600" href="#mortgage-remortgages">First Time Buyers</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#mortgage-remortgages">Remortgages</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#secured-loans">Buy to Let</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#insurance-protection">Protection Advice</a></li>
           </ul></div>
-        <div><h4 class="display text-sm font-bold tracking-widest text-white">Company</h4>
-          <ul class="mt-4 grid gap-2">
-            <li><a class="transition-colors hover:text-white" href="#about">About Us</a></li>
-            <li><a class="transition-colors hover:text-white" href="#contact">Contact</a></li>
-            <li><a class="transition-colors hover:text-white" href="#contact">Careers</a></li>
-            <li><a class="transition-colors hover:text-white" href="#contact">Privacy Policy</a></li>
+        <div><h4 class="display text-sm font-bold tracking-widest">Company</h4>
+          <ul class="mt-4 grid gap-2 text-primary-900">
+            <li><a class="transition-colors hover:text-primary-600" href="#about">About Us</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#contact">Contact</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#contact">Careers</a></li>
+            <li><a class="transition-colors hover:text-primary-600" href="#contact">Privacy Policy</a></li>
           </ul></div>
-        <div><h4 class="display text-sm font-bold tracking-widest text-white">Contact</h4>
-          <p class="mt-4">The Brookhouse, Smithy Lane, Market Drayton<br />Shropshire, TF9 4HP</p>
-          <p class="mt-3">Authorised &amp; Regulated by the FCA: 195920</p></div>
+        <div><h4 class="display text-sm font-bold tracking-widest">Contact</h4>
+          <p class="mt-4 text-primary-900">The Brookhouse, Smithy Lane, Market Drayton<br />Shropshire, TF9 4HP</p>
+          <p class="mt-3 text-primary-900">Authorised &amp; Regulated by the FCA: 195920</p></div>
       </div>
-      <div class="mt-12 grid gap-3 border-t border-white/10 pt-6 text-sm text-primary-300">
-        <p><strong class="text-white">Important:</strong> As a mortgage is secured against your home, it may be repossessed if you do not keep up repayments on your mortgage. Some types of buy to let mortgages are not regulated by the Financial Conduct Authority.</p>
+      <div class="mt-12 grid gap-3 border-t border-primary-950/15 pt-6 text-sm text-primary-900">
+        <p><strong class="text-primary-950">Important:</strong> As a mortgage is secured against your home, it may be repossessed if you do not keep up repayments on your mortgage. Some types of buy to let mortgages are not regulated by the Financial Conduct Authority.</p>
         <p>&copy; 2026 Interfinancial. All rights reserved.</p>
       </div>
     </div>
@@ -616,7 +617,7 @@
           </div>
         </div>
         <div class="rv relative" style="--d:1">
-          <div class="notch aspect-[4/5] overflow-hidden rounded-[2rem] lg:aspect-[3/4]"><img src="img/hero-keys.avif" width="900" height="1100" loading="lazy" alt="Model house with keys" class="size-full object-cover" /></div>
+          <div class="img-rv notch aspect-[4/5] overflow-hidden rounded-[2rem] lg:aspect-[3/4]"><img src="img/hero-keys.avif" width="900" height="1100" loading="lazy" alt="Model house with keys" class="size-full object-cover" /></div>
           <div class="absolute inset-x-4 bottom-4 rounded-[1.5rem] bg-primary-950 p-6 text-white md:inset-x-6 md:bottom-6" aria-live="polite">
             <div class="flex items-end justify-between gap-4">
               <div><p class="text-xs font-semibold tracking-wider text-primary-300 uppercase">Estimated Monthly</p><p data-out="monthly" class="font-display text-5xl leading-none font-bold tabular-nums">£1,251</p></div>
