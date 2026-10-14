@@ -1,107 +1,92 @@
+import '@fontsource-variable/bricolage-grotesque';
+import '@fontsource-variable/dm-sans';
 import './index.css';
 
-// 1. Hash Routing
-function handleHashChange() {
-  const hash = window.location.hash || '#home';
-  const pageId = hash.replace('#', '');
-  
-  // Hide all pages
-  document.querySelectorAll('.page-container').forEach((el: Element) => {
-    (el as HTMLElement).style.display = 'none';
-  });
-  
-  // Show active page
-  const activePage = document.getElementById(`page-${pageId}`);
-  if (activePage) {
-    activePage.style.display = 'block';
-  } else {
-    // fallback to home
-    const homePage = document.getElementById('page-home');
-    if (homePage) homePage.style.display = 'block';
-  }
-  
-  // Update nav active states
-  document.querySelectorAll('.nav-links a, .mobile-link').forEach((el: Element) => {
-    const a = el as HTMLAnchorElement;
-    if (a.getAttribute('href') === hash) {
-      a.classList.add('text-primary-600');
-      a.classList.remove('text-slate-600');
-    } else {
-      a.classList.remove('text-primary-600');
-      a.classList.add('text-slate-600');
-    }
-  });
+const pages = Array.from(document.querySelectorAll<HTMLElement>('.page'));
+const navLinks = Array.from(document.querySelectorAll<HTMLAnchorElement>('.nav a, .mobile-menu a:not(.btn)'));
+const header = document.getElementById('site-header')!;
+const menuBtn = document.getElementById('menu-btn')!;
+const menu = document.getElementById('mobile-menu')!;
+const ctaBand = document.getElementById('cta-band')!;
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  window.scrollTo(0, 0);
-}
-
-window.addEventListener('hashchange', handleHashChange);
-// Initial load
-handleHashChange();
-
-// 2. Mobile Menu
-const menuBtn = document.getElementById('mobile-menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-
-if (menuBtn && mobileMenu) {
-  menuBtn.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('hidden')) {
-      mobileMenu.classList.remove('hidden');
-      mobileMenu.classList.add('flex');
-    } else {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-    }
-  });
-
-  // Close menu when a link is clicked
-  const mobileLinks = mobileMenu.querySelectorAll('a');
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      mobileMenu.classList.remove('flex');
-    });
-  });
-}
-
-// 3. Calculator
-function calculateMortgage() {
-  const priceInput = document.getElementById('calc-price') as HTMLInputElement | null;
-  const depositInput = document.getElementById('calc-deposit') as HTMLInputElement | null;
-  const rateInput = document.getElementById('calc-rate') as HTMLInputElement | null;
-  const termInput = document.getElementById('calc-term') as HTMLInputElement | null;
-  const monthlyEl = document.getElementById('calc-monthly');
-  const loanEl = document.getElementById('calc-loan');
-
-  if (!priceInput || !depositInput || !rateInput || !termInput || !monthlyEl || !loanEl) return;
-
-  const p = Number(priceInput.value) || 0;
-  const d = Number(depositInput.value) || 0;
-  const r = Number(rateInput.value) || 0;
-  const t = Number(termInput.value) || 0;
-
-  const principal = p - d;
-  loanEl.textContent = `£${principal > 0 ? principal.toLocaleString() : 0}`;
-
-  if (principal <= 0 || r <= 0 || t <= 0) {
-    monthlyEl.textContent = '£0';
-    return;
-  }
-
-  const monthlyRate = r / 100 / 12;
-  const numberOfPayments = t * 12;
-  
-  const monthlyPayment = principal * 
-    (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / 
-    (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
-
-  monthlyEl.textContent = `£${Math.round(monthlyPayment).toLocaleString()}`;
-}
-
-['calc-price', 'calc-deposit', 'calc-rate', 'calc-term'].forEach(id => {
-  const el = document.getElementById(id);
-  if (el) {
-    el.addEventListener('input', calculateMortgage);
-  }
+// Calculator partial -> every slot
+const tpl = document.getElementById('calculator-tpl') as HTMLTemplateElement;
+document.querySelectorAll<HTMLElement>('[data-slot="calculator"]').forEach((slot) => {
+  slot.appendChild(tpl.content.cloneNode(true));
 });
 
+// Reveal on scroll (one shared observer, transform/opacity only)
+const io = new IntersectionObserver(
+  (entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    }
+  },
+  { rootMargin: '0px 0px -8% 0px', threshold: 0.05 },
+);
+const observeVisible = (page: HTMLElement) =>
+  page.querySelectorAll('.rv:not(.in)').forEach((el) => io.observe(el));
+
+// Hash routing: #page-name shows a page, any other #id scrolls to that element's page
+function route() {
+  const id = decodeURIComponent(location.hash.slice(1)) || 'home';
+  let page = document.getElementById(`page-${id}`) as HTMLElement | null;
+  let target: HTMLElement | null = null;
+  if (!page) {
+    target = document.getElementById(id);
+    page = target?.closest<HTMLElement>('.page') ?? document.getElementById('page-home');
+  }
+  const pageId = page!.id.replace('page-', '');
+  pages.forEach((p) => (p.hidden = p !== page));
+  ctaBand.hidden = pageId === 'contact';
+  observeVisible(page!);
+
+  navLinks.forEach((a) => a.classList.toggle('is-active', a.getAttribute('href') === `#${pageId}`));
+  setMenu(false);
+
+  if (target) {
+    requestAnimationFrame(() => target!.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' }));
+  } else {
+    window.scrollTo(0, 0);
+  }
+  document.title = pageId === 'home' ? 'Interfinancial | Independent Mortgage & Insurance Brokers, Market Drayton' : `${page!.querySelector('.kicker')?.textContent ?? 'Interfinancial'} | Interfinancial`;
+}
+addEventListener('hashchange', route);
+
+// Mobile menu
+function setMenu(open: boolean) {
+  menu.classList.toggle('is-open', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  menuBtn.querySelector('use')!.setAttribute('href', open ? '#i-close' : '#i-menu');
+  document.body.style.overflow = open ? 'hidden' : '';
+}
+menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+addEventListener('keydown', (e) => e.key === 'Escape' && setMenu(false));
+
+// Header hairline once scrolled
+addEventListener('scroll', () => header.classList.toggle('is-stuck', scrollY > 8), { passive: true });
+
+// Calculator (works for any number of instances)
+document.querySelectorAll<HTMLElement>('.calc').forEach((calc) => {
+  const val = (k: string) => Number(calc.querySelector<HTMLInputElement>(`[data-calc="${k}"]`)!.value) || 0;
+  const out = (k: string) => calc.querySelector<HTMLElement>(`[data-out="${k}"]`)!;
+  const money = (n: number) => `£${Math.round(n).toLocaleString('en-GB')}`;
+  const update = () => {
+    const loan = Math.max(val('price') - val('deposit'), 0);
+    const r = val('rate') / 100 / 12;
+    const n = val('term') * 12;
+    out('loan').textContent = money(loan);
+    if (!loan || n <= 0) return void (out('monthly').textContent = '£0');
+    const m = r === 0 ? loan / n : (loan * r * (1 + r) ** n) / ((1 + r) ** n - 1);
+    out('monthly').textContent = money(m);
+  };
+  calc.addEventListener('input', update);
+  update();
+});
+
+route();
